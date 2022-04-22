@@ -1,0 +1,18 @@
+name: Lesson
+identifiable: true
+protocols:
+  - Identifiable
+states:
+  - name: id
+    type: UUID
+  - name: videoURL
+    type: URL?
+  - name: title
+    type: String
+  - name: description
+    type: String
+  - name: authToken
+    type: String?
+actions:
+  - name: watchVideo
+

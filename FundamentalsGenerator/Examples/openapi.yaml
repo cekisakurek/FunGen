@@ -1,0 +1,104 @@
+openapi: 3.0.1
+info:
+  title: Fundamentals
+  version: v1
+paths:
+  /api/authenticate:
+    post:
+      tags:
+        - Authentication
+      summary: Authenticate a user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Credentials'
+      responses:
+        '200':
+          description: Authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+
+  /api/register:
+    post:
+      tags:
+        - Registration
+      summary: Register a user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateUserForm'
+      responses:
+        '200':
+          description: User created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+  
+  /api/me:
+    get:
+      tags:
+        - User
+      security:
+        - bearerAuth: []
+      summary: Get user details
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+components:
+  schemas:
+    Credentials:
+      type: object
+      properties:
+        email:
+          type: string
+        password:
+          type: string
+    Token:
+      type: object
+      properties:
+        value:
+          type: string
+          description: Access token to use for guarded requrests.
+        token_type:
+          type: string
+          description: Bearer
+    CreateUserForm:
+      type: object
+      properties:
+        name:
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        password_confirmation:
+          type: string
+    User:
+      type: object
+      properties:
+        name: 
+          type: string
+        email:
+          type: string
+        password:
+          type: string
+        profile_photo_url:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      description: JWT Authorization header using the Bearer scheme.
+      scheme: bearer
+      bearerFormat: JWT
+

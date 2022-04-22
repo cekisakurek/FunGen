@@ -1,0 +1,17 @@
+name: User
+states:
+  - name: showRegistrationForm
+    type: Bool
+  - name: profilePictureURL
+    type: URL?
+actions:
+  - name: toggleShowRegistrationForm
+  - name: loadAppUserProfile
+  - name: didLoadAppUser
+    subtypes:
+      - type: Result<Fundamentals.AppUser, NSError>
+        name: result
+dependencies:
+  - authentication.yaml
+  - registration.yaml
+

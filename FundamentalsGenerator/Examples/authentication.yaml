@@ -1,0 +1,26 @@
+name: Authentication
+states:
+  - name: email
+    type: String
+  - name: password
+    type: String
+  - name: authToken
+    type: String?
+  - name: isLoginButtonDisabled
+    type: Bool
+actions:
+  - name: loginButtonTapped
+  - name: saveCredentials
+  - name: emailTextFieldChanged
+    subtypes:
+      - type: String
+        name: text
+  - name: passwordTextFieldChanged
+    subtypes:
+      - type: String
+        name: text
+  - name: authenticationResponse
+    subtypes:
+      - type: Result<String, NSError>
+        name: result
+
