@@ -14,8 +14,8 @@ extension FungenLogic {
     static func loadRootModule(state: FungenState, environment: FungenEnvironment)
     -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Reading Module definitions from \(state.inputFile)", OSLogType.debug, environment.verbose)
-        return environment.loadFile(state.inputFile, environment.verbose)
+        environment.printMessage("Reading Module definitions from \(state.inputFile)", OSLogType.debug, state.verbose)
+        return environment.loadFile(state.inputFile, state.verbose)
             .receive(on: environment.mainQueue)
             .catchToEffect()
             .map(FungenAction.rootModuleLoaded)
@@ -24,7 +24,7 @@ extension FungenLogic {
     static func rootModuleLoaded(state: inout FungenState, module: Module, environment: FungenEnvironment)
     -> Effect<FungenAction, Never> {
         
-        environment.printMessage("\(module.name) has been loaded", OSLogType.debug, environment.verbose)
+        environment.printMessage("\(module.name) has been loaded", OSLogType.debug, state.verbose)
         state.rootModule = module
         return Effect<FungenAction, Never>.init(value: FungenAction.resolveDependencies(module))
     }
@@ -32,8 +32,8 @@ extension FungenLogic {
     static func loadModule(state: FungenState, environment: FungenEnvironment)
     -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Loading module \(state.inputFile)", OSLogType.debug, environment.verbose)
-        return environment.loadFile(state.inputFile, environment.verbose)
+        environment.printMessage("Loading module \(state.inputFile)", OSLogType.debug, state.verbose)
+        return environment.loadFile(state.inputFile, state.verbose)
             .receive(on: environment.mainQueue)
             .catchToEffect()
             .map(FungenAction.moduleLoaded)
@@ -42,7 +42,7 @@ extension FungenLogic {
     static func moduleLoaded(state: inout FungenState, module: Module, environment: FungenEnvironment)
     -> Effect<FungenAction, Never> {
         
-        environment.printMessage("\(module.name) Module has been loaded", OSLogType.debug, environment.verbose)
+        environment.printMessage("\(module.name) Module has been loaded", OSLogType.debug, state.verbose)
         state.dependencies.append(module)
         return Effect<FungenAction, Never>.init(value: FungenAction.resolveDependencies(module))
     }

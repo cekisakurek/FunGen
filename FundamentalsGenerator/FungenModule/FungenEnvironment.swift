@@ -32,9 +32,7 @@ struct FungenEnvironment {
     var printMessage: (_ message: String, _ logType: OSLogType, _ verbose: Bool) -> Void
     
     var printErrorAndAbort: (_ message: NSError, _ logType: OSLogType) -> Never
-    
-    var verbose: Bool
-    
+        
     static let live = Self(mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
                            loadFile: FungenLogic.loadFile(filename:verbose:),
                            resolveDependencies: FungenLogic.resolveDependencies(module:baseURL:verbose:),
@@ -43,8 +41,7 @@ struct FungenEnvironment {
                            generateStateExtensionContent: FungenLogic.generateStateExtensionContent(module:dependencies:environment:),
                            writeFile: FungenLogic.writeFile(content:folder:subfolder:filename:),
                            printMessage: printMessage(_:logType:verbose:),
-                           printErrorAndAbort: printErrorAndAbort(error:logType:),
-                           verbose: false
+                           printErrorAndAbort: printErrorAndAbort(error:logType:)
     )
     
     

@@ -21,6 +21,8 @@ struct FungenState: Equatable {
     var actionFileCreated = false
     var extensionFileCreated = false
     
+    var verbose = false
+    
     func isFileCreationFinished() -> Bool {
         return stateFileCreated && actionFileCreated && extensionFileCreated
     }

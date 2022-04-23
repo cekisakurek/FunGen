@@ -14,7 +14,7 @@ extension FungenLogic {
     
     static func resolveDependencies(state: FungenState, module: Module, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Resolving dependencies for \(module.name)", OSLogType.debug, environment.verbose)
+        environment.printMessage("Resolving dependencies for \(module.name)", OSLogType.debug, state.verbose)
         return environment.resolveDependencies(module, state.baseURL, false)
             .receive(on: environment.mainQueue)
             .catchToEffect()
@@ -23,7 +23,7 @@ extension FungenLogic {
     
     static func dependenciesResolved(state: FungenState, dependencies: [Module], environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Dependencies resolved \(dependencies.map({ $0.name }))", OSLogType.debug, environment.verbose)
+        environment.printMessage("Dependencies resolved \(dependencies.map({ $0.name }))", OSLogType.debug, state.verbose)
         let effects = dependencies.map { item in
             Effect<FungenAction, Never>.init(value: FungenAction.moduleLoaded(.success(item)))
         }

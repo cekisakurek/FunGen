@@ -10,18 +10,13 @@ import ComposableArchitecture
 
 final class FunGenerator {
     
-    var verbose: Bool = false
-    
     var state: FungenState?
     var store: Store<FungenState, FungenAction>!
     var viewStore: ViewStore<FungenState, FungenAction>!
     
     func run(for state: FungenState) {
         
-        var environment = FungenEnvironment.live
-        environment.verbose = verbose
-        
-        self.store = Store(initialState: state, reducer: fungenReducer, environment: environment )
+        self.store = Store(initialState: state, reducer: fungenReducer, environment: .live )
         self.viewStore = ViewStore(store)
         self.viewStore.send(.loadRootModule)
         
@@ -33,8 +28,7 @@ final class FunGenerator {
     }
     
     func run(inputFile: String, outputFolder: String, baseURL: URL, verbose: Bool) {
-        self.verbose = verbose
-        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
+        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL, verbose: verbose)
         run(for: state)
     }
 }

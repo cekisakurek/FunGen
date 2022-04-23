@@ -18,7 +18,7 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
     switch action {
         
     case .exit:
-        environment.printMessage("Done!", .default, environment.verbose)
+        environment.printMessage("Done!", .default, state.verbose)
         DefaultCommand.exit()
         
         
