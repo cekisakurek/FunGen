@@ -18,13 +18,15 @@ struct Generate: ParsableCommand {
     @Option(name: .customLong("output"), help: "Output file directory. Required to be already existing.")
     private var outputFolder: String
         
-    @Option(name: .customLong("verbose"), help: "Verbose. Default is false")
-    private var verbose: Bool = false
+//    @Option(name: .customLong("verbose"), help: "Verbose. Default is false")
+//    private var verbose: Bool?
+    
+    @Flag var verbose = false
     
     func run() throws {
         
         let baseURL = URL(fileURLWithPath: inputFile, isDirectory: false).deletingLastPathComponent()
-        FunGenerator.generator.run(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
+        FunGenerator.generator.run(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL, verbose: verbose)
     }
 }
 

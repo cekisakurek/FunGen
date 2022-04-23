@@ -32,7 +32,8 @@ final class FunGenerator {
         }
     }
     
-    func run(inputFile: String, outputFolder: String, baseURL: URL) {
+    func run(inputFile: String, outputFolder: String, baseURL: URL, verbose: Bool) {
+        self.verbose = verbose
         let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
         run(for: state)
     }

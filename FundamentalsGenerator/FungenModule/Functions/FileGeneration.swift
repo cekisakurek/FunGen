@@ -7,12 +7,13 @@
 
 import Foundation
 import ComposableArchitecture
+import os.log
 
 extension FungenLogic {
 
     static func generate(state: FungenState, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Generating...")
+        environment.printMessage("Generating...", OSLogType.debug, environment.verbose)
         return .merge(
             Effect<FungenAction, Never>.init(value: FungenAction.generateStateFile(from:state.rootModule!, dependencies: state.dependencies)),
             Effect<FungenAction, Never>.init(value: FungenAction.generateActionFile(from:state.rootModule!, dependencies: state.dependencies)),
@@ -22,7 +23,7 @@ extension FungenLogic {
 
     static func generateStateFile(state: FungenState, module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<FungenAction, Never> {
     
-        environment.printMessage("Generating State file for \(module.name)")
+        environment.printMessage("Generating State file for \(module.name)", OSLogType.debug, environment.verbose)
         return environment.generateStateContent(module, dependencies, environment)
             .receive(on: environment.mainQueue)
             .catchToEffect()
@@ -31,7 +32,7 @@ extension FungenLogic {
 
     static func stateFileGenerated(state: inout FungenState, module: Module, content: String, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("State file generated for \(module.name)")
+        environment.printMessage("State file generated for \(module.name)", OSLogType.debug, environment.verbose)
         state.stateFileCreated = true
         return environment.writeFile(content, state.outputFolder, module.name, "\(module.name)State.swift")
             .receive(on: environment.mainQueue)
@@ -41,7 +42,7 @@ extension FungenLogic {
 
     static func generateActionFile(state: FungenState, module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Generating Action file for \(module.name)")
+        environment.printMessage("Generating Action file for \(module.name)", OSLogType.debug, environment.verbose)
         return environment.generateActionContent(module, dependencies, environment)
             .receive(on: environment.mainQueue)
             .catchToEffect()
@@ -50,7 +51,7 @@ extension FungenLogic {
 
     static func actionFileGenerated(state: inout FungenState, module: Module, content: String, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Action file generated for \(module.name)")
+        environment.printMessage("Action file generated for \(module.name)", OSLogType.debug, environment.verbose)
         state.actionFileCreated = true
         return environment.writeFile(content, state.outputFolder, module.name, "\(module.name)Action.swift")
             .receive(on: environment.mainQueue)
@@ -61,7 +62,7 @@ extension FungenLogic {
 
     static func generateExtensionFile(state: FungenState, module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Generating Extension file for \(module.name)")
+        environment.printMessage("Generating Extension file for \(module.name)", OSLogType.debug, environment.verbose)
         return environment.generateStateExtensionContent(module, dependencies, environment)
             .receive(on: environment.mainQueue)
             .catchToEffect()
@@ -70,7 +71,7 @@ extension FungenLogic {
 
     static func extensionFileGenerated(state: inout FungenState, module: Module, content: String, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Extension file generated for \(module.name)")
+        environment.printMessage("Extension file generated for \(module.name)", OSLogType.debug, environment.verbose)
         state.extensionFileCreated = true
         return environment.writeFile(content, state.outputFolder, module.name, "\(module.name)Extension.swift")
             .receive(on: environment.mainQueue)
@@ -80,7 +81,7 @@ extension FungenLogic {
 
     static func fileWritten(state: FungenState, to path: String, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("File created at \(path)")
+        environment.printMessage("File created at \(path)", OSLogType.default, environment.verbose)
         if state.isFileCreationFinished() {
             return Effect<FungenAction, Never>.init(value: FungenAction.exit)
                 .deferred(for: 1, scheduler: environment.mainQueue)

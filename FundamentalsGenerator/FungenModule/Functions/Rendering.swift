@@ -24,7 +24,7 @@ extension FungenLogic {
         context["imports"] = module.imports
         
         guard let rendered = try? environment.stencil.renderTemplate(string: stateTemplate, context: context) else {
-            return Effect(error: FunGenError.cannotRenderModule(name: module.name, filename: "State"))
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "State"))
         }
         return Effect(value: (module, rendered))
     }
@@ -41,7 +41,7 @@ extension FungenLogic {
         context["imports"] = module.imports
         
         guard let rendered = try? environment.stencil.renderTemplate(string: actionTemplate, context: context) else {
-            return Effect(error: FunGenError.cannotRenderModule(name: module.name, filename: "Action"))
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Action"))
         }
         return Effect(value: (module, rendered))
     }
@@ -71,7 +71,7 @@ extension FungenLogic {
         context["imports"] = module.imports
         
         guard let rendered = try? environment.stencil.renderTemplate(string: stateExtensionTemplate, context: context) else {
-            return Effect(error: FunGenError.cannotRenderModule(name: module.name, filename: "Extension"))
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Extension"))
         }
         return Effect(value: (module, rendered))
     }
@@ -80,16 +80,16 @@ extension FungenLogic {
     static func writeFile(content: String, folder: String, subfolder: String, filename: String) -> Effect<String, NSError> {
         
         guard let folder = try? Folder(path: folder).createSubfolder(named: subfolder) else {
-            return Effect(error: FunGenError.outputFolderNotReachable)
+            return Effect(error: FungenError.outputFolderNotReachable)
         }
         guard let file = try? folder.createFile(named: filename) else {
-            return Effect(error: FunGenError.cannotCreateFile(name: filename))
+            return Effect(error: FungenError.cannotCreateFile(name: filename))
         }
         
         try? file.delete()
         
         guard let _ = try? file.write(content) else  {
-            return Effect(error: FunGenError.cannotWriteFile(name: filename))
+            return Effect(error: FungenError.cannotWriteFile(name: filename))
         }
         return Effect(value: file.url.absoluteString)
     }
@@ -97,10 +97,10 @@ extension FungenLogic {
     static func loadFile(filename: String, verbose: Bool) -> Effect<Module, NSError> {
         
         guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
-            return Effect(error: FunGenError.cannotReadFile(name: filename))
+            return Effect(error: FungenError.cannotReadFile(name: filename))
         }
         guard var module = try? YAMLDecoder().decode(Module.self, from: content) else {
-            return Effect(error: FunGenError.cannotDecodeFile(name: filename))
+            return Effect(error: FungenError.cannotDecodeFile(name: filename))
         }
         
         module.inputFilename = filename

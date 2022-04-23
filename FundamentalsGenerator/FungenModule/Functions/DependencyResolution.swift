@@ -8,12 +8,13 @@
 import Foundation
 import ComposableArchitecture
 import Yams
+import os.log
 
 extension FungenLogic {
     
     static func resolveDependencies(state: FungenState, module: Module, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Resolving dependencies for \(module.name) ")
+        environment.printMessage("Resolving dependencies for \(module.name)", OSLogType.debug, environment.verbose)
         return environment.resolveDependencies(module, state.baseURL, false)
             .receive(on: environment.mainQueue)
             .catchToEffect()
@@ -22,7 +23,7 @@ extension FungenLogic {
     
     static func dependenciesResolved(state: FungenState, dependencies: [Module], environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
-        environment.printMessage("Dependencies resolved \(dependencies.map({ $0.name }))")
+        environment.printMessage("Dependencies resolved \(dependencies.map({ $0.name }))", OSLogType.debug, environment.verbose)
         let effects = dependencies.map { item in
             Effect<FungenAction, Never>.init(value: FungenAction.moduleLoaded(.success(item)))
         }
@@ -43,10 +44,10 @@ extension FungenLogic {
             let dependencyPath = url.relativePath
             
             guard let content = try? String(contentsOfFile: dependencyPath, encoding: .utf8) else {
-                return Effect(error: FunGenError.cannotReadFile(name: dependencyPath))
+                return Effect(error: FungenError.cannotReadFile(name: dependencyPath))
             }
             guard var submodule = try? YAMLDecoder().decode(Module.self, from: content) else {
-                return Effect(error: FunGenError.cannotDecodeFile(name: dependencyPath))
+                return Effect(error: FungenError.cannotDecodeFile(name: dependencyPath))
             }
             
             submodule.inputFilename = dependency

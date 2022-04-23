@@ -10,6 +10,7 @@ import ComposableArchitecture
 import Yams
 import Files
 import Stencil
+import os.log
 
 struct FungenEnvironment {
     
@@ -28,11 +29,11 @@ struct FungenEnvironment {
     
     var writeFile: (_ content: String, _ folder: String, _ subfolder: String, _ filename: String) -> Effect<String, NSError>
     
-    var printMessage: (_ message: String) -> Void
+    var printMessage: (_ message: String, _ logType: OSLogType, _ verbose: Bool) -> Void
     
-    var printErrorAndAbort: (_ message: String) -> Never
+    var printErrorAndAbort: (_ message: NSError, _ logType: OSLogType) -> Never
     
-    var verbose = false
+    var verbose: Bool
     
     static let live = Self(mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
                            loadFile: FungenLogic.loadFile(filename:verbose:),
@@ -41,16 +42,25 @@ struct FungenEnvironment {
                            generateActionContent: FungenLogic.generateActionContent(module:dependencies:environment:),
                            generateStateExtensionContent: FungenLogic.generateStateExtensionContent(module:dependencies:environment:),
                            writeFile: FungenLogic.writeFile(content:folder:subfolder:filename:),
-                           printMessage: printMessage(_:),
-                           printErrorAndAbort: printErrorAndAbort(message:)
+                           printMessage: printMessage(_:logType:verbose:),
+                           printErrorAndAbort: printErrorAndAbort(error:logType:),
+                           verbose: false
     )
     
-    static func printMessage(_ message: String){
-        print("INFO: \(message)")
+    
+    
+    static func printMessage(_ message: String, logType: OSLogType, verbose: Bool) {
+        
+        if logType == .default {
+            print("\(message)")
+        }
+        else if verbose {
+            print("INFO: \(message)")
+        }
     }
 
-    static func printErrorAndAbort(message: String) -> Never {
-        print("ERROR: \(message)")
+    static func printErrorAndAbort(error: NSError, logType: OSLogType) -> Never {
+        print("ERROR: \(error.localizedDescription)")
         return abort()
     }
 }
