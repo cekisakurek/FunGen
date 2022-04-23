@@ -1,0 +1,22 @@
+import Foundation
+import ComposableArchitecture
+import Combine
+
+enum RegistrationAction: Equatable {
+
+    case registerButtonTapped
+
+    case saveCredentials
+
+    case usernameTextFieldChanged(text: String)
+
+    case emailTextFieldChanged(text: String)
+
+    case passwordTextFieldChanged(text: String)
+
+    case passwordConfirmationTextFieldChanged(text: String)
+
+    case registrationResponse(result: Result<String, NSError>)
+
+
+}

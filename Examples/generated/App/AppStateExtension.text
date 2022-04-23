@@ -1,0 +1,48 @@
+import Foundation
+import ComposableArchitecture
+
+extension AppState  {
+
+    
+    public var coursesState: CoursesState {
+        get {
+            .init(authToken: authToken,courses: courses)
+        }
+        set {
+        
+            authToken = newValue.authToken
+        
+            courses = newValue.courses
+        
+        }
+    }
+
+    
+    public var userState: UserState {
+        get {
+            .init(authToken: authToken,email: email,isLoginButtonDisabled: isLoginButtonDisabled,isRegisterButtonDisabled: isRegisterButtonDisabled,name: name,password: password,passwordConfirmation: passwordConfirmation,profilePictureURL: profilePictureURL,showRegistrationForm: showRegistrationForm)
+        }
+        set {
+        
+            authToken = newValue.authToken
+        
+            email = newValue.email
+        
+            isLoginButtonDisabled = newValue.isLoginButtonDisabled
+        
+            isRegisterButtonDisabled = newValue.isRegisterButtonDisabled
+        
+            name = newValue.name
+        
+            password = newValue.password
+        
+            passwordConfirmation = newValue.passwordConfirmation
+        
+            profilePictureURL = newValue.profilePictureURL
+        
+            showRegistrationForm = newValue.showRegistrationForm
+        
+        }
+    }
+
+}

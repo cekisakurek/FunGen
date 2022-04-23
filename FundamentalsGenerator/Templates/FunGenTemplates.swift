@@ -10,8 +10,9 @@ import Foundation
 
 let stateTemplate =
 """
-import Foundation
-import ComposableArchitecture
+{% for import in imports %}
+import {{ import }}
+{% endfor %}
 
 public struct {{name}}State: {% for protocol in protocols %}{{ protocol }}{% if protocols.last != protocol  %}, {% endif %}{% endfor %} {
 {% for state in states %}
@@ -29,9 +30,9 @@ public struct {{name}}State: {% for protocol in protocols %}{{ protocol }}{% if 
 
 let actionTemplate =
 """
-import Foundation
-import ComposableArchitecture
-import Combine
+{% for import in imports %}
+import {{ import }}
+{% endfor %}
 
 enum {{name}}Action: Equatable {
 {% for action in actions %}
@@ -49,18 +50,19 @@ enum {{name}}Action: Equatable {
 
 let stateExtensionTemplate =
 """
-import Foundation
-import ComposableArchitecture
+{% for import in imports %}
+import {{ import }}
+{% endfor %}
 
-extension {{name}}State  {
-{% for submodule in submodules where submodule.identifiable == false %}
-    {{ submodule.states.first.name }}
+extension {{name}}State {
+{% for submodule in submodules %}
+    {{ submodule.test }}
     public var {{ submodule.caseName }}State: {{submodule.name}}State {
         get {
-            .init({% for state in submodule.statesArray %}{{ state.name }}: {{ state.name }}{% if submodule.statesArray.last.name != state.name  %},{% endif %}{% endfor %})
+            .init({% for state in submodule.statesArrayForStencil %}{{ state.name }}: {{ state.name }}{% if submodule.statesArrayForStencil.last.name != state.name  %}, {% endif %}{% endfor %})
         }
         set {
-        {% for state in submodule.statesArray %}
+        {% for state in submodule.statesArrayForStencil %}
             {{ state.name }} = newValue.{{ state.name }}
         {% endfor %}
         }

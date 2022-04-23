@@ -13,11 +13,49 @@
 		776E01492811D8C3004A4253 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01482811D8C3004A4253 /* ArgumentParser */; };
 		776E014C2811DD38004A4253 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 776E014B2811DD38004A4253 /* AnyCodable */; };
 		776E01512811E4A2004A4253 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01502811E4A2004A4253 /* Files */; };
-		776E01D62812EB02004A4253 /* FunGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01D52812EB02004A4253 /* FunGen.swift */; };
-		776E01D82812EDD4004A4253 /* FunGenOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01D72812EDD4004A4253 /* FunGenOperations.swift */; };
-		776E01DA2812EE27004A4253 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01D92812EE27004A4253 /* DataModel.swift */; };
+		776E01D62812EB02004A4253 /* Fungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01D52812EB02004A4253 /* Fungen.swift */; };
 		776E01DC2812EE5A004A4253 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DB2812EE5A004A4253 /* Extensions.swift */; };
 		776E01DE2812EE92004A4253 /* FunGenTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DD2812EE92004A4253 /* FunGenTemplates.swift */; };
+		776E023328132AFA004A4253 /* FunTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E023228132AFA004A4253 /* FunTest.swift */; };
+		776E023D28132DA2004A4253 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DB2812EE5A004A4253 /* Extensions.swift */; };
+		776E024128132E41004A4253 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 776E024028132E41004A4253 /* Yams */; };
+		776E024328132E45004A4253 /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 776E024228132E45004A4253 /* Stencil */; };
+		776E024428132F19004A4253 /* AppStateExtension.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01FD28131115004A4253 /* AppStateExtension.text */; };
+		776E024528132F19004A4253 /* AppAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01FE28131115004A4253 /* AppAction.text */; };
+		776E024628132F19004A4253 /* AppState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01FC28131115004A4253 /* AppState.text */; };
+		776E024728133B1C004A4253 /* RegistrationAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01F628131115004A4253 /* RegistrationAction.text */; };
+		776E024828133B1C004A4253 /* RegistrationState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01F528131115004A4253 /* RegistrationState.text */; };
+		776E024928133B20004A4253 /* CourseAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01F928131115004A4253 /* CourseAction.text */; };
+		776E024A28133B20004A4253 /* CourseState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01FA28131115004A4253 /* CourseState.text */; };
+		776E024B28133B20004A4253 /* CourseStateExtension.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E01F828131115004A4253 /* CourseStateExtension.text */; };
+		776E024C28133B25004A4253 /* UserStateExtension.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020128131115004A4253 /* UserStateExtension.text */; };
+		776E024D28133B25004A4253 /* UserAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020028131115004A4253 /* UserAction.text */; };
+		776E024E28133B25004A4253 /* UserState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020228131115004A4253 /* UserState.text */; };
+		776E024F28133B28004A4253 /* CoursesState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020528131115004A4253 /* CoursesState.text */; };
+		776E025028133B28004A4253 /* CoursesStateExtension.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020428131115004A4253 /* CoursesStateExtension.text */; };
+		776E025128133B28004A4253 /* CoursesAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020628131115004A4253 /* CoursesAction.text */; };
+		776E025228133B2C004A4253 /* LessonState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020828131115004A4253 /* LessonState.text */; };
+		776E025328133B2C004A4253 /* LessonAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020928131115004A4253 /* LessonAction.text */; };
+		776E025428133B30004A4253 /* AuthenticationState.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020B28131115004A4253 /* AuthenticationState.text */; };
+		776E025528133B30004A4253 /* AuthenticationAction.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E020C28131115004A4253 /* AuthenticationAction.text */; };
+		776E025D28133B47004A4253 /* registration.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E52812EF89004A4253 /* registration.yaml */; };
+		776E025E28133B47004A4253 /* openapi.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E42812EF89004A4253 /* openapi.yaml */; };
+		776E025F28133B47004A4253 /* course.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E12812EF89004A4253 /* course.yaml */; };
+		776E026028133B47004A4253 /* app.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E22812EF89004A4253 /* app.yaml */; };
+		776E026128133B47004A4253 /* authentication.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E32812EF89004A4253 /* authentication.yaml */; };
+		776E026228133B47004A4253 /* lesson.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E72812EF89004A4253 /* lesson.yaml */; };
+		776E026328133B47004A4253 /* courses.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E62812EF89004A4253 /* courses.yaml */; };
+		776E026428133B47004A4253 /* user.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 776E01E02812EF89004A4253 /* user.yaml */; };
+		776E02662813509D004A4253 /* FungenReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02652813509D004A4253 /* FungenReducer.swift */; };
+		776E0268281350A4004A4253 /* FungenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E0267281350A4004A4253 /* FungenState.swift */; };
+		776E026A281350AA004A4253 /* FungenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E0269281350AA004A4253 /* FungenAction.swift */; };
+		776E026C281350B1004A4253 /* FungenEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E026B281350B1004A4253 /* FungenEnvironment.swift */; };
+		776E026F281350DE004A4253 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 776E026E281350DE004A4253 /* ComposableArchitecture */; };
+		776E027328145C35004A4253 /* DefaultCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E027228145C35004A4253 /* DefaultCommand.swift */; };
+		776E027528145C92004A4253 /* GenerateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E027428145C92004A4253 /* GenerateCommand.swift */; };
+		776E02A728146B55004A4253 /* FungenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A628146B55004A4253 /* FungenError.swift */; };
+		776E02A928146CE8004A4253 /* FungenStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A828146CE8004A4253 /* FungenStateExtension.swift */; };
+		776E02AB28146D04004A4253 /* ModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AA28146D04004A4253 /* ModuleState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,11 +71,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		770DC613280ED89500FCCCB7 /* FundamentalsGenerator */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FundamentalsGenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		770DC613280ED89500FCCCB7 /* fungen */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = fungen; sourceTree = BUILT_PRODUCTS_DIR; };
 		770DC616280ED89500FCCCB7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		776E01D52812EB02004A4253 /* FunGen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunGen.swift; sourceTree = "<group>"; };
-		776E01D72812EDD4004A4253 /* FunGenOperations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunGenOperations.swift; sourceTree = "<group>"; };
-		776E01D92812EE27004A4253 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		776E01D52812EB02004A4253 /* Fungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fungen.swift; sourceTree = "<group>"; };
 		776E01DB2812EE5A004A4253 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		776E01DD2812EE92004A4253 /* FunGenTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunGenTemplates.swift; sourceTree = "<group>"; };
 		776E01E02812EF89004A4253 /* user.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = user.yaml; sourceTree = "<group>"; };
@@ -48,6 +84,35 @@
 		776E01E52812EF89004A4253 /* registration.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = registration.yaml; sourceTree = "<group>"; };
 		776E01E62812EF89004A4253 /* courses.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = courses.yaml; sourceTree = "<group>"; };
 		776E01E72812EF89004A4253 /* lesson.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = lesson.yaml; sourceTree = "<group>"; };
+		776E01F528131115004A4253 /* RegistrationState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RegistrationState.text; sourceTree = "<group>"; };
+		776E01F628131115004A4253 /* RegistrationAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RegistrationAction.text; sourceTree = "<group>"; };
+		776E01F828131115004A4253 /* CourseStateExtension.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CourseStateExtension.text; sourceTree = "<group>"; };
+		776E01F928131115004A4253 /* CourseAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CourseAction.text; sourceTree = "<group>"; };
+		776E01FA28131115004A4253 /* CourseState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CourseState.text; sourceTree = "<group>"; };
+		776E01FC28131115004A4253 /* AppState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AppState.text; sourceTree = "<group>"; };
+		776E01FD28131115004A4253 /* AppStateExtension.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AppStateExtension.text; sourceTree = "<group>"; };
+		776E01FE28131115004A4253 /* AppAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AppAction.text; sourceTree = "<group>"; };
+		776E020028131115004A4253 /* UserAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserAction.text; sourceTree = "<group>"; };
+		776E020128131115004A4253 /* UserStateExtension.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserStateExtension.text; sourceTree = "<group>"; };
+		776E020228131115004A4253 /* UserState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UserState.text; sourceTree = "<group>"; };
+		776E020428131115004A4253 /* CoursesStateExtension.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoursesStateExtension.text; sourceTree = "<group>"; };
+		776E020528131115004A4253 /* CoursesState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoursesState.text; sourceTree = "<group>"; };
+		776E020628131115004A4253 /* CoursesAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CoursesAction.text; sourceTree = "<group>"; };
+		776E020828131115004A4253 /* LessonState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LessonState.text; sourceTree = "<group>"; };
+		776E020928131115004A4253 /* LessonAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = LessonAction.text; sourceTree = "<group>"; };
+		776E020B28131115004A4253 /* AuthenticationState.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AuthenticationState.text; sourceTree = "<group>"; };
+		776E020C28131115004A4253 /* AuthenticationAction.text */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AuthenticationAction.text; sourceTree = "<group>"; };
+		776E023028132AFA004A4253 /* FunTest.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FunTest.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		776E023228132AFA004A4253 /* FunTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunTest.swift; sourceTree = "<group>"; };
+		776E02652813509D004A4253 /* FungenReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenReducer.swift; sourceTree = "<group>"; };
+		776E0267281350A4004A4253 /* FungenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenState.swift; sourceTree = "<group>"; };
+		776E0269281350AA004A4253 /* FungenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenAction.swift; sourceTree = "<group>"; };
+		776E026B281350B1004A4253 /* FungenEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenEnvironment.swift; sourceTree = "<group>"; };
+		776E027228145C35004A4253 /* DefaultCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultCommand.swift; sourceTree = "<group>"; };
+		776E027428145C92004A4253 /* GenerateCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateCommand.swift; sourceTree = "<group>"; };
+		776E02A628146B55004A4253 /* FungenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenError.swift; sourceTree = "<group>"; };
+		776E02A828146CE8004A4253 /* FungenStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenStateExtension.swift; sourceTree = "<group>"; };
+		776E02AA28146D04004A4253 /* ModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +122,19 @@
 			files = (
 				776E014C2811DD38004A4253 /* AnyCodable in Frameworks */,
 				776E01492811D8C3004A4253 /* ArgumentParser in Frameworks */,
+				776E026F281350DE004A4253 /* ComposableArchitecture in Frameworks */,
 				776E01512811E4A2004A4253 /* Files in Frameworks */,
 				776E01412811D7FF004A4253 /* Yams in Frameworks */,
 				770DC61F280ED8B000FCCCB7 /* Stencil in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776E022D28132AFA004A4253 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776E024128132E41004A4253 /* Yams in Frameworks */,
+				776E024328132E45004A4253 /* Stencil in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,15 +144,19 @@
 		770DC60A280ED89500FCCCB7 = {
 			isa = PBXGroup;
 			children = (
+				776E01DF2812EF7B004A4253 /* Examples */,
 				770DC615280ED89500FCCCB7 /* FundamentalsGenerator */,
+				776E023128132AFA004A4253 /* FunTest */,
 				770DC614280ED89500FCCCB7 /* Products */,
+				776E023F28132E41004A4253 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		770DC614280ED89500FCCCB7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				770DC613280ED89500FCCCB7 /* FundamentalsGenerator */,
+				770DC613280ED89500FCCCB7 /* fungen */,
+				776E023028132AFA004A4253 /* FunTest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,13 +164,12 @@
 		770DC615280ED89500FCCCB7 /* FundamentalsGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				776E01DF2812EF7B004A4253 /* Examples */,
+				776E027828145E09004A4253 /* FungenModule */,
+				776E027728145DF8004A4253 /* Extensions */,
+				776E027628145D51004A4253 /* Templates */,
+				776E027128145C2E004A4253 /* Commands */,
 				770DC616280ED89500FCCCB7 /* main.swift */,
-				776E01D52812EB02004A4253 /* FunGen.swift */,
-				776E01D72812EDD4004A4253 /* FunGenOperations.swift */,
-				776E01D92812EE27004A4253 /* DataModel.swift */,
-				776E01DB2812EE5A004A4253 /* Extensions.swift */,
-				776E01DD2812EE92004A4253 /* FunGenTemplates.swift */,
+				776E01D52812EB02004A4253 /* Fungen.swift */,
 			);
 			path = FundamentalsGenerator;
 			sourceTree = "<group>";
@@ -99,6 +177,7 @@
 		776E01DF2812EF7B004A4253 /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				776E01F328131115004A4253 /* generated */,
 				776E01E22812EF89004A4253 /* app.yaml */,
 				776E01E32812EF89004A4253 /* authentication.yaml */,
 				776E01E12812EF89004A4253 /* course.yaml */,
@@ -111,12 +190,147 @@
 			path = Examples;
 			sourceTree = "<group>";
 		};
+		776E01F328131115004A4253 /* generated */ = {
+			isa = PBXGroup;
+			children = (
+				776E01F428131115004A4253 /* Registration */,
+				776E01F728131115004A4253 /* Course */,
+				776E01FB28131115004A4253 /* App */,
+				776E01FF28131115004A4253 /* User */,
+				776E020328131115004A4253 /* Courses */,
+				776E020728131115004A4253 /* Lesson */,
+				776E020A28131115004A4253 /* Authentication */,
+			);
+			path = generated;
+			sourceTree = "<group>";
+		};
+		776E01F428131115004A4253 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				776E01F528131115004A4253 /* RegistrationState.text */,
+				776E01F628131115004A4253 /* RegistrationAction.text */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		776E01F728131115004A4253 /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				776E01F828131115004A4253 /* CourseStateExtension.text */,
+				776E01F928131115004A4253 /* CourseAction.text */,
+				776E01FA28131115004A4253 /* CourseState.text */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		776E01FB28131115004A4253 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				776E01FC28131115004A4253 /* AppState.text */,
+				776E01FD28131115004A4253 /* AppStateExtension.text */,
+				776E01FE28131115004A4253 /* AppAction.text */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		776E01FF28131115004A4253 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				776E020028131115004A4253 /* UserAction.text */,
+				776E020128131115004A4253 /* UserStateExtension.text */,
+				776E020228131115004A4253 /* UserState.text */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		776E020328131115004A4253 /* Courses */ = {
+			isa = PBXGroup;
+			children = (
+				776E020428131115004A4253 /* CoursesStateExtension.text */,
+				776E020528131115004A4253 /* CoursesState.text */,
+				776E020628131115004A4253 /* CoursesAction.text */,
+			);
+			path = Courses;
+			sourceTree = "<group>";
+		};
+		776E020728131115004A4253 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				776E020828131115004A4253 /* LessonState.text */,
+				776E020928131115004A4253 /* LessonAction.text */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		776E020A28131115004A4253 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				776E020B28131115004A4253 /* AuthenticationState.text */,
+				776E020C28131115004A4253 /* AuthenticationAction.text */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		776E023128132AFA004A4253 /* FunTest */ = {
+			isa = PBXGroup;
+			children = (
+				776E023228132AFA004A4253 /* FunTest.swift */,
+			);
+			path = FunTest;
+			sourceTree = "<group>";
+		};
+		776E023F28132E41004A4253 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		776E027128145C2E004A4253 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				776E027228145C35004A4253 /* DefaultCommand.swift */,
+				776E027428145C92004A4253 /* GenerateCommand.swift */,
+			);
+			path = Commands;
+			sourceTree = "<group>";
+		};
+		776E027628145D51004A4253 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				776E01DD2812EE92004A4253 /* FunGenTemplates.swift */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		776E027728145DF8004A4253 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				776E01DB2812EE5A004A4253 /* Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		776E027828145E09004A4253 /* FungenModule */ = {
+			isa = PBXGroup;
+			children = (
+				776E02652813509D004A4253 /* FungenReducer.swift */,
+				776E0267281350A4004A4253 /* FungenState.swift */,
+				776E0269281350AA004A4253 /* FungenAction.swift */,
+				776E026B281350B1004A4253 /* FungenEnvironment.swift */,
+				776E02A628146B55004A4253 /* FungenError.swift */,
+				776E02A828146CE8004A4253 /* FungenStateExtension.swift */,
+				776E02AA28146D04004A4253 /* ModuleState.swift */,
+			);
+			path = FungenModule;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		770DC612280ED89500FCCCB7 /* FundamentalsGenerator */ = {
+		770DC612280ED89500FCCCB7 /* fungen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 770DC61A280ED89500FCCCB7 /* Build configuration list for PBXNativeTarget "FundamentalsGenerator" */;
+			buildConfigurationList = 770DC61A280ED89500FCCCB7 /* Build configuration list for PBXNativeTarget "fungen" */;
 			buildPhases = (
 				770DC60F280ED89500FCCCB7 /* Sources */,
 				770DC610280ED89500FCCCB7 /* Frameworks */,
@@ -126,17 +340,39 @@
 			);
 			dependencies = (
 			);
-			name = FundamentalsGenerator;
+			name = fungen;
 			packageProductDependencies = (
 				770DC61E280ED8B000FCCCB7 /* Stencil */,
 				776E01402811D7FF004A4253 /* Yams */,
 				776E01482811D8C3004A4253 /* ArgumentParser */,
 				776E014B2811DD38004A4253 /* AnyCodable */,
 				776E01502811E4A2004A4253 /* Files */,
+				776E026E281350DE004A4253 /* ComposableArchitecture */,
 			);
 			productName = FundamentalsGenerator;
-			productReference = 770DC613280ED89500FCCCB7 /* FundamentalsGenerator */;
+			productReference = 770DC613280ED89500FCCCB7 /* fungen */;
 			productType = "com.apple.product-type.tool";
+		};
+		776E022F28132AFA004A4253 /* FunTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 776E023428132AFA004A4253 /* Build configuration list for PBXNativeTarget "FunTest" */;
+			buildPhases = (
+				776E022C28132AFA004A4253 /* Sources */,
+				776E022D28132AFA004A4253 /* Frameworks */,
+				776E022E28132AFA004A4253 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FunTest;
+			packageProductDependencies = (
+				776E024028132E41004A4253 /* Yams */,
+				776E024228132E45004A4253 /* Stencil */,
+			);
+			productName = FunTest;
+			productReference = 776E023028132AFA004A4253 /* FunTest.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -149,6 +385,9 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					770DC612280ED89500FCCCB7 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					776E022F28132AFA004A4253 = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
@@ -168,27 +407,81 @@
 				776E01472811D8C3004A4253 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 				776E014A2811DD38004A4253 /* XCRemoteSwiftPackageReference "AnyCodable" */,
 				776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */,
+				776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 			);
 			productRefGroup = 770DC614280ED89500FCCCB7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				770DC612280ED89500FCCCB7 /* FundamentalsGenerator */,
+				770DC612280ED89500FCCCB7 /* fungen */,
+				776E022F28132AFA004A4253 /* FunTest */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		776E022E28132AFA004A4253 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776E024F28133B28004A4253 /* CoursesState.text in Resources */,
+				776E024B28133B20004A4253 /* CourseStateExtension.text in Resources */,
+				776E025F28133B47004A4253 /* course.yaml in Resources */,
+				776E025528133B30004A4253 /* AuthenticationAction.text in Resources */,
+				776E024428132F19004A4253 /* AppStateExtension.text in Resources */,
+				776E025128133B28004A4253 /* CoursesAction.text in Resources */,
+				776E024D28133B25004A4253 /* UserAction.text in Resources */,
+				776E025D28133B47004A4253 /* registration.yaml in Resources */,
+				776E024828133B1C004A4253 /* RegistrationState.text in Resources */,
+				776E025428133B30004A4253 /* AuthenticationState.text in Resources */,
+				776E024C28133B25004A4253 /* UserStateExtension.text in Resources */,
+				776E025328133B2C004A4253 /* LessonAction.text in Resources */,
+				776E026128133B47004A4253 /* authentication.yaml in Resources */,
+				776E026428133B47004A4253 /* user.yaml in Resources */,
+				776E024928133B20004A4253 /* CourseAction.text in Resources */,
+				776E025228133B2C004A4253 /* LessonState.text in Resources */,
+				776E025028133B28004A4253 /* CoursesStateExtension.text in Resources */,
+				776E026228133B47004A4253 /* lesson.yaml in Resources */,
+				776E026328133B47004A4253 /* courses.yaml in Resources */,
+				776E024728133B1C004A4253 /* RegistrationAction.text in Resources */,
+				776E026028133B47004A4253 /* app.yaml in Resources */,
+				776E024A28133B20004A4253 /* CourseState.text in Resources */,
+				776E024E28133B25004A4253 /* UserState.text in Resources */,
+				776E025E28133B47004A4253 /* openapi.yaml in Resources */,
+				776E024628132F19004A4253 /* AppState.text in Resources */,
+				776E024528132F19004A4253 /* AppAction.text in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		770DC60F280ED89500FCCCB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776E027328145C35004A4253 /* DefaultCommand.swift in Sources */,
+				776E02A728146B55004A4253 /* FungenError.swift in Sources */,
+				776E0268281350A4004A4253 /* FungenState.swift in Sources */,
+				776E02A928146CE8004A4253 /* FungenStateExtension.swift in Sources */,
 				776E01DC2812EE5A004A4253 /* Extensions.swift in Sources */,
-				776E01D62812EB02004A4253 /* FunGen.swift in Sources */,
+				776E01D62812EB02004A4253 /* Fungen.swift in Sources */,
 				776E01DE2812EE92004A4253 /* FunGenTemplates.swift in Sources */,
-				776E01DA2812EE27004A4253 /* DataModel.swift in Sources */,
+				776E026A281350AA004A4253 /* FungenAction.swift in Sources */,
+				776E02AB28146D04004A4253 /* ModuleState.swift in Sources */,
+				776E026C281350B1004A4253 /* FungenEnvironment.swift in Sources */,
+				776E027528145C92004A4253 /* GenerateCommand.swift in Sources */,
 				770DC617280ED89500FCCCB7 /* main.swift in Sources */,
-				776E01D82812EDD4004A4253 /* FunGenOperations.swift in Sources */,
+				776E02662813509D004A4253 /* FungenReducer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		776E022C28132AFA004A4253 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				776E023D28132DA2004A4253 /* Extensions.swift in Sources */,
+				776E023328132AFA004A4253 /* FunTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +619,34 @@
 			};
 			name = Release;
 		};
+		776E023528132AFA004A4253 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rocks.cihan.FunTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		776E023628132AFA004A4253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = rocks.cihan.FunTest;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -338,11 +659,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		770DC61A280ED89500FCCCB7 /* Build configuration list for PBXNativeTarget "FundamentalsGenerator" */ = {
+		770DC61A280ED89500FCCCB7 /* Build configuration list for PBXNativeTarget "fungen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				770DC61B280ED89500FCCCB7 /* Debug */,
 				770DC61C280ED89500FCCCB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		776E023428132AFA004A4253 /* Build configuration list for PBXNativeTarget "FunTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				776E023528132AFA004A4253 /* Debug */,
+				776E023628132AFA004A4253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -390,6 +720,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cihankisakurek/swift-composable-architecture.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -417,6 +755,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */;
 			productName = Files;
+		};
+		776E024028132E41004A4253 /* Yams */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776E013F2811D7FF004A4253 /* XCRemoteSwiftPackageReference "Yams" */;
+			productName = Yams;
+		};
+		776E024228132E45004A4253 /* Stencil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */;
+			productName = Stencil;
+		};
+		776E026E281350DE004A4253 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

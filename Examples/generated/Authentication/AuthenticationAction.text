@@ -1,0 +1,18 @@
+import Foundation
+import ComposableArchitecture
+import Combine
+
+enum AuthenticationAction: Equatable {
+
+    case loginButtonTapped
+
+    case saveCredentials
+
+    case emailTextFieldChanged(text: String)
+
+    case passwordTextFieldChanged(text: String)
+
+    case authenticationResponse(result: Result<String, NSError>)
+
+
+}

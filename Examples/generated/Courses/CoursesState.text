@@ -1,0 +1,17 @@
+import Foundation
+import ComposableArchitecture
+
+public struct CoursesState: Equatable {
+
+    public var authToken: String?
+
+    public var courses: IdentifiedArrayOf<CourseState>
+
+    public init(authToken: String?, courses: IdentifiedArrayOf<CourseState>) {
+    
+        self.authToken = authToken
+    
+        self.courses = courses
+    
+    }
+}

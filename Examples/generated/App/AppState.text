@@ -1,0 +1,57 @@
+import Foundation
+import ComposableArchitecture
+
+public struct AppState: Equatable {
+
+    public var authToken: String?
+
+    public var courses: IdentifiedArrayOf<CourseState>
+
+    public var deviceToken: Data?
+
+    public var email: String
+
+    public var isLoginButtonDisabled: Bool
+
+    public var isRegisterButtonDisabled: Bool
+
+    public var keychainCredentials: Fundamentals.Credentials?
+
+    public var name: String
+
+    public var password: String
+
+    public var passwordConfirmation: String
+
+    public var profilePictureURL: URL?
+
+    public var showRegistrationForm: Bool
+
+    public init(authToken: String?, courses: IdentifiedArrayOf<CourseState>, deviceToken: Data?, email: String, isLoginButtonDisabled: Bool, isRegisterButtonDisabled: Bool, keychainCredentials: Fundamentals.Credentials?, name: String, password: String, passwordConfirmation: String, profilePictureURL: URL?, showRegistrationForm: Bool) {
+    
+        self.authToken = authToken
+    
+        self.courses = courses
+    
+        self.deviceToken = deviceToken
+    
+        self.email = email
+    
+        self.isLoginButtonDisabled = isLoginButtonDisabled
+    
+        self.isRegisterButtonDisabled = isRegisterButtonDisabled
+    
+        self.keychainCredentials = keychainCredentials
+    
+        self.name = name
+    
+        self.password = password
+    
+        self.passwordConfirmation = passwordConfirmation
+    
+        self.profilePictureURL = profilePictureURL
+    
+        self.showRegistrationForm = showRegistrationForm
+    
+    }
+}

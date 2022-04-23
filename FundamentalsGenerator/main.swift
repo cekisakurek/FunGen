@@ -4,6 +4,7 @@
 //
 //  Created by Cihan Kisakurek on 19.04.22.
 //
+import Foundation
 
-
-FunGen.main()
+DefaultCommand.main()
+RunLoop.main.run()
