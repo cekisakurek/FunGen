@@ -31,7 +31,7 @@ struct FungenEnvironment {
     
     var printMessage: (_ message: String, _ logType: OSLogType, _ verbose: Bool) -> Void
     
-    var printErrorAndAbort: (_ message: NSError, _ logType: OSLogType) -> Never
+    var printErrorAndAbort: (_ message: NSError) -> Never
         
     static let live = Self(mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
                            loadFile: FungenLogic.loadFile(filename:verbose:),
@@ -41,7 +41,7 @@ struct FungenEnvironment {
                            generateStateExtensionContent: FungenLogic.generateStateExtensionContent(module:dependencies:environment:),
                            writeFile: FungenLogic.writeFile(content:folder:subfolder:filename:),
                            printMessage: printMessage(_:logType:verbose:),
-                           printErrorAndAbort: printErrorAndAbort(error:logType:)
+                           printErrorAndAbort: printErrorAndAbort(error:)
     )
     
     
@@ -49,15 +49,17 @@ struct FungenEnvironment {
     static func printMessage(_ message: String, logType: OSLogType, verbose: Bool) {
         
         if logType == .default {
-            print("\(message)")
+            os_log("%@", log: OSLog.default, type: logType, message)
         }
         else if verbose {
-            print("INFO: \(message)")
+            os_log("%@", log: OSLog.default, type: logType, message)
+            
         }
+        
     }
 
-    static func printErrorAndAbort(error: NSError, logType: OSLogType) -> Never {
-        print("ERROR: \(error.localizedDescription)")
+    static func printErrorAndAbort(error: NSError) -> Never {
+        os_log("%@", log: OSLog.default, type: .error, error.localizedDescription)
         return abort()
     }
 }

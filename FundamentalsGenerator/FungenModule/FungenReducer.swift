@@ -94,7 +94,7 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
     case let .actionFileWritten(.failure(error)):
         fallthrough
     case let .rootModuleLoaded(.failure(error)):
-        environment.printErrorAndAbort(error, OSLogType.error)
+        environment.printErrorAndAbort(error)
     }
 }
 

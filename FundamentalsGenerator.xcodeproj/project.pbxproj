@@ -63,6 +63,7 @@
 		776E02B6281491D4004A4253 /* FungenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B5281491D4004A4253 /* FungenLogic.swift */; };
 		776E02B82814945B004A4253 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B72814945B004A4253 /* StateDefinition.swift */; };
 		776E02BA2814946B004A4253 /* ActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B92814946B004A4253 /* ActionDefinition.swift */; };
+		776E02BC2814A1F7004A4253 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02BB2814A1F7004A4253 /* OSLog.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -127,6 +128,7 @@
 		776E02B5281491D4004A4253 /* FungenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenLogic.swift; sourceTree = "<group>"; };
 		776E02B72814945B004A4253 /* StateDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
 		776E02B92814946B004A4253 /* ActionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDefinition.swift; sourceTree = "<group>"; };
+		776E02BB2814A1F7004A4253 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -321,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				776E01DB2812EE5A004A4253 /* Extensions.swift */,
+				776E02BB2814A1F7004A4253 /* OSLog.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				776E01D62812EB02004A4253 /* Fungen.swift in Sources */,
 				776E02B6281491D4004A4253 /* FungenLogic.swift in Sources */,
 				776E01DE2812EE92004A4253 /* FunGenTemplates.swift in Sources */,
+				776E02BC2814A1F7004A4253 /* OSLog.swift in Sources */,
 				776E02B2281489AD004A4253 /* DependencyResolution.swift in Sources */,
 				776E02AE281488E2004A4253 /* FileGeneration.swift in Sources */,
 				776E026A281350AA004A4253 /* FungenAction.swift in Sources */,

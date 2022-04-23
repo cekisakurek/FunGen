@@ -75,35 +75,4 @@ extension FungenLogic {
         }
         return Effect(value: (module, rendered))
     }
-    
-    
-    static func writeFile(content: String, folder: String, subfolder: String, filename: String) -> Effect<String, NSError> {
-        
-        guard let folder = try? Folder(path: folder).createSubfolder(named: subfolder) else {
-            return Effect(error: FungenError.outputFolderNotReachable)
-        }
-        guard let file = try? folder.createFile(named: filename) else {
-            return Effect(error: FungenError.cannotCreateFile(name: filename))
-        }
-        
-        try? file.delete()
-        
-        guard let _ = try? file.write(content) else  {
-            return Effect(error: FungenError.cannotWriteFile(name: filename))
-        }
-        return Effect(value: file.url.absoluteString)
-    }
-    
-    static func loadFile(filename: String, verbose: Bool) -> Effect<Module, NSError> {
-        
-        guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
-            return Effect(error: FungenError.cannotReadFile(name: filename))
-        }
-        guard var module = try? YAMLDecoder().decode(Module.self, from: content) else {
-            return Effect(error: FungenError.cannotDecodeFile(name: filename))
-        }
-        
-        module.inputFilename = filename
-        return Effect(value: module)
-    }
 }

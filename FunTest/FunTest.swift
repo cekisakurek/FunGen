@@ -149,7 +149,7 @@ class FunTest: XCTestCase {
 
         }
     }
-//    
+//
 //    func testAppModule() throws {
 //
 //        let app = try module(name: "app")
