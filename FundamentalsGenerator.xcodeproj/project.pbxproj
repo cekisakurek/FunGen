@@ -56,6 +56,13 @@
 		776E02A728146B55004A4253 /* FungenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A628146B55004A4253 /* FungenError.swift */; };
 		776E02A928146CE8004A4253 /* FungenStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A828146CE8004A4253 /* FungenStateExtension.swift */; };
 		776E02AB28146D04004A4253 /* ModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AA28146D04004A4253 /* ModuleState.swift */; };
+		776E02AE281488E2004A4253 /* FileGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AD281488E2004A4253 /* FileGeneration.swift */; };
+		776E02B028148925004A4253 /* Rendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AF28148925004A4253 /* Rendering.swift */; };
+		776E02B2281489AD004A4253 /* DependencyResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B1281489AD004A4253 /* DependencyResolution.swift */; };
+		776E02B4281489D2004A4253 /* FileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B3281489D2004A4253 /* FileLoading.swift */; };
+		776E02B6281491D4004A4253 /* FungenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B5281491D4004A4253 /* FungenLogic.swift */; };
+		776E02B82814945B004A4253 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B72814945B004A4253 /* StateDefinition.swift */; };
+		776E02BA2814946B004A4253 /* ActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B92814946B004A4253 /* ActionDefinition.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -113,6 +120,13 @@
 		776E02A628146B55004A4253 /* FungenError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenError.swift; sourceTree = "<group>"; };
 		776E02A828146CE8004A4253 /* FungenStateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenStateExtension.swift; sourceTree = "<group>"; };
 		776E02AA28146D04004A4253 /* ModuleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleState.swift; sourceTree = "<group>"; };
+		776E02AD281488E2004A4253 /* FileGeneration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGeneration.swift; sourceTree = "<group>"; };
+		776E02AF28148925004A4253 /* Rendering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rendering.swift; sourceTree = "<group>"; };
+		776E02B1281489AD004A4253 /* DependencyResolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyResolution.swift; sourceTree = "<group>"; };
+		776E02B3281489D2004A4253 /* FileLoading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileLoading.swift; sourceTree = "<group>"; };
+		776E02B5281491D4004A4253 /* FungenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenLogic.swift; sourceTree = "<group>"; };
+		776E02B72814945B004A4253 /* StateDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
+		776E02B92814946B004A4253 /* ActionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDefinition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -314,6 +328,7 @@
 		776E027828145E09004A4253 /* FungenModule */ = {
 			isa = PBXGroup;
 			children = (
+				776E02AC281488D7004A4253 /* Functions */,
 				776E02652813509D004A4253 /* FungenReducer.swift */,
 				776E0267281350A4004A4253 /* FungenState.swift */,
 				776E0269281350AA004A4253 /* FungenAction.swift */,
@@ -321,8 +336,22 @@
 				776E02A628146B55004A4253 /* FungenError.swift */,
 				776E02A828146CE8004A4253 /* FungenStateExtension.swift */,
 				776E02AA28146D04004A4253 /* ModuleState.swift */,
+				776E02B72814945B004A4253 /* StateDefinition.swift */,
+				776E02B92814946B004A4253 /* ActionDefinition.swift */,
 			);
 			path = FungenModule;
+			sourceTree = "<group>";
+		};
+		776E02AC281488D7004A4253 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				776E02AD281488E2004A4253 /* FileGeneration.swift */,
+				776E02AF28148925004A4253 /* Rendering.swift */,
+				776E02B1281489AD004A4253 /* DependencyResolution.swift */,
+				776E02B3281489D2004A4253 /* FileLoading.swift */,
+				776E02B5281491D4004A4253 /* FungenLogic.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -460,18 +489,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				776E02BA2814946B004A4253 /* ActionDefinition.swift in Sources */,
 				776E027328145C35004A4253 /* DefaultCommand.swift in Sources */,
+				776E02B82814945B004A4253 /* StateDefinition.swift in Sources */,
 				776E02A728146B55004A4253 /* FungenError.swift in Sources */,
 				776E0268281350A4004A4253 /* FungenState.swift in Sources */,
 				776E02A928146CE8004A4253 /* FungenStateExtension.swift in Sources */,
 				776E01DC2812EE5A004A4253 /* Extensions.swift in Sources */,
+				776E02B028148925004A4253 /* Rendering.swift in Sources */,
 				776E01D62812EB02004A4253 /* Fungen.swift in Sources */,
+				776E02B6281491D4004A4253 /* FungenLogic.swift in Sources */,
 				776E01DE2812EE92004A4253 /* FunGenTemplates.swift in Sources */,
+				776E02B2281489AD004A4253 /* DependencyResolution.swift in Sources */,
+				776E02AE281488E2004A4253 /* FileGeneration.swift in Sources */,
 				776E026A281350AA004A4253 /* FungenAction.swift in Sources */,
 				776E02AB28146D04004A4253 /* ModuleState.swift in Sources */,
 				776E026C281350B1004A4253 /* FungenEnvironment.swift in Sources */,
 				776E027528145C92004A4253 /* GenerateCommand.swift in Sources */,
 				770DC617280ED89500FCCCB7 /* main.swift in Sources */,
+				776E02B4281489D2004A4253 /* FileLoading.swift in Sources */,
 				776E02662813509D004A4253 /* FungenReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

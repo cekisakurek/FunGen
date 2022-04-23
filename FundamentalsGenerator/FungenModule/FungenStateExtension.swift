@@ -10,14 +10,16 @@ import Foundation
 extension Module {
     
     var allSubmodulesRecursively: [Module] {
+        
         let items = self.submodules
         return items + items.flatMap { $0.allSubmodulesRecursively }
     }
     
-    public mutating func applyDependencies(_ subModules: [Module]) {
+    // This looks ugly
+    mutating func applyDependencies(_ subModules: [Module]) {
+        
         guard subModules.count > 0 else { return }
         
-        // This looks ugly
         if let dependencies = dependencies {
             for depName in dependencies {
                 for sub in subModules {
@@ -30,9 +32,9 @@ extension Module {
             }
         }
     }
-    
-    public func allStates() -> [StateDefinition] {
-        // This looks ugly too!
+    // This looks ugly too!
+    func allStates() -> [StateDefinition] {
+        guard self.states.count > 0 else { return [] }
         var states = Set<StateDefinition>()
         for state in self.states {
             states.insert(state)

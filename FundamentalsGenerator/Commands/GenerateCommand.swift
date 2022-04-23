@@ -21,12 +21,13 @@ struct Generate: ParsableCommand {
     @Option(name: .customLong("verbose"), help: "Verbose. Default is false")
     private var verbose: Bool = false
     
-//    @Argument(help: "URL to retrieve", transform: ({ return URL(string: $0)!})) var string: URL
-
     func run() throws {
         
         let baseURL = URL(fileURLWithPath: inputFile, isDirectory: false).deletingLastPathComponent()
-        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
-        FunGenerator.generator.run(for: state)
+        FunGenerator.generator.run(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
     }
+}
+
+extension FunGenerator {
+    static let generator = FunGenerator()
 }

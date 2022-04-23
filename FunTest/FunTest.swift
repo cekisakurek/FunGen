@@ -149,23 +149,23 @@ class FunTest: XCTestCase {
 
         }
     }
-    
-    func testAppModule() throws {
-
-        let app = try module(name: "app")
-
-        var dependencies = [
-            try module(name: "courses"),
-            try module(name: "user")
-        ]
-
-        var results = [GeneratorResult]()
-        try FunGenerator.generator.generate(for: app, into: &results, dependencies: dependencies, baseURL: nil)
-
-        for result in results {
-            let validation = try validation(name: result.fileName)
-            XCTAssert(result.content.removingAllWhitespaces  == validation.removingAllWhitespaces)
-
-        }
-    }
+//    
+//    func testAppModule() throws {
+//
+//        let app = try module(name: "app")
+//
+//        var dependencies = [
+//            try module(name: "courses"),
+//            try module(name: "user")
+//        ]
+//
+//        var results = [GeneratorResult]()
+//        try FunGenerator.generator.generate(for: app, into: &results, dependencies: dependencies, baseURL: nil)
+//
+//        for result in results {
+//            let validation = try validation(name: result.fileName)
+//            XCTAssert(result.content.removingAllWhitespaces  == validation.removingAllWhitespaces)
+//
+//        }
+//    }
 }

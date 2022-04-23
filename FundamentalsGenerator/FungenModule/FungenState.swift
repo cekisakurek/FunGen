@@ -8,12 +8,20 @@
 import Foundation
 import ComposableArchitecture
 
-public struct FungenState: Equatable {
-    public var inputFile: String
-    public var outputFolder: String
-    public var verbose = false
-    public var baseURL: URL
+struct FungenState: Equatable {
     
-    public var rootModule: Module?
-    public var dependencies: [Module] = []
+    var inputFile: String
+    var outputFolder: String
+    var baseURL: URL
+    
+    var rootModule: Module?
+    var dependencies: [Module] = []
+    
+    var stateFileCreated = false
+    var actionFileCreated = false
+    var extensionFileCreated = false
+    
+    func isFileCreationFinished() -> Bool {
+        return stateFileCreated && actionFileCreated && extensionFileCreated
+    }
 }

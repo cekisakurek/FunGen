@@ -31,5 +31,7 @@ enum FungenAction {
     case generateExtensionFile(from: Module, dependencies: [Module])
     case extensionFileGenerated(Result<(Module, String), NSError>)
     case extensionFileWritten(Result<String, NSError>)
+    
+    case exit
 }
 

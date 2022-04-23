@@ -8,14 +8,7 @@
 import Foundation
 import ComposableArchitecture
 
-
-public final class FunGenerator {
-    
-    
-    
-    static let generator = FunGenerator()
-    
-    private var outputs: [String: String] = [:]
+final class FunGenerator {
     
     var verbose: Bool = false
     
@@ -24,12 +17,23 @@ public final class FunGenerator {
     var viewStore: ViewStore<FungenState, FungenAction>!
     
     func run(for state: FungenState) {
-        self.store = Store(initialState: state, reducer: appReducer, environment: .live )
+        
+        var environment = FungenEnvironment.live
+        environment.verbose = verbose
+        
+        self.store = Store(initialState: state, reducer: fungenReducer, environment: environment )
         self.viewStore = ViewStore(store)
         self.viewStore.send(.loadRootModule)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+        // We need to wait until everything is resolved
+        // TODO: Find a better way of doing this
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             self?.viewStore.send(.generate)
         }
+    }
+    
+    func run(inputFile: String, outputFolder: String, baseURL: URL) {
+        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL)
+        run(for: state)
     }
 }
