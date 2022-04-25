@@ -11,13 +11,13 @@ import ComposableArchitecture
 struct Module: Equatable, Codable, Identifiable {
     
     // Stencil does not work with calculated values or functions. So we use this array in the template engine
-    var statesArrayForStencil: [StateDefinition] = []
+    var statesSet: Set<StateDefinition>
     
     var id: String { name }
     
     var inputFilename: String = ""
     var name: String
-    var states: Set<StateDefinition>
+    var states: [StateDefinition] = []
     var actions: [ActionDefinition]
     var dependencies: [String]?
     var identifiable: Bool
@@ -31,10 +31,21 @@ struct Module: Equatable, Codable, Identifiable {
     
     var baseURL: URL?
     
+    enum CodingKeys: String, CodingKey {
+            case name
+            case statesSet = "states"
+            case actions
+            case dependencies
+            case identifiable
+            case protocols
+            
+        }
+    
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decodeIfPresent(String.self, forKey: .name)!
-        self.states = try container.decodeIfPresent(Set<StateDefinition>.self, forKey: .states)!
+        
+        self.statesSet = try container.decodeIfPresent(Set<StateDefinition>.self, forKey: .statesSet)!
         self.actions = try container.decodeIfPresent([ActionDefinition].self, forKey: .actions)!
         self.dependencies = try container.decodeIfPresent([String].self, forKey: .dependencies)
 

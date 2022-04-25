@@ -54,8 +54,8 @@ struct DependencyResolution {
             submodule.baseURL = baseURL
             results.append(submodule)
             
-            for state in submodule.states {
-                resultModule.states.insert(state)
+            for state in submodule.statesSet {
+                resultModule.statesSet.insert(state)
             }
         }
         return Effect(value: results)

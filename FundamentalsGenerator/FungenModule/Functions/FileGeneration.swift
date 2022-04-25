@@ -19,7 +19,7 @@ struct FileGeneration {
         var effects = [Effect<FungenAction, Never>]()
         
         if let templateFolder = state.templatesFolder {
-            let actionContent = FungenAction.loadStateFileTemplate(fromPath: templateFolder + "/ActionTemplate.text")
+            let actionContent = FungenAction.loadStateFileTemplate(fromPath: templateFolder + "/StateTemplate.text")
             effects.append(Effect<FungenAction, Never>.init(value: actionContent))
             
             let stateContent = FungenAction.loadActionFileTemplate(fromPath: templateFolder + "/ActionTemplate.text")
@@ -29,11 +29,15 @@ struct FileGeneration {
             effects.append(Effect<FungenAction, Never>.init(value: extensionContent))
         }
         else {
-            effects.append(contentsOf: [
-                Effect<FungenAction, Never>.init(value: .stateFileTemplateLoaded(.success(stateTemplate))),
-                Effect<FungenAction, Never>.init(value: .actionFileTemplateLoaded(.success(actionTemplate))),
-                Effect<FungenAction, Never>.init(value: .extensionFileTemplateLoaded(.success(stateExtensionTemplate)))
-            ])
+            
+            let actionContent = FungenAction.loadStateFileTemplate(fromPath: nil)
+            effects.append(Effect<FungenAction, Never>.init(value: actionContent))
+            
+            let stateContent = FungenAction.loadActionFileTemplate(fromPath: nil)
+            effects.append(Effect<FungenAction, Never>.init(value: stateContent))
+            
+            let extensionContent = FungenAction.loadExtensionFileTemplate(fromPath: nil)
+            effects.append(Effect<FungenAction, Never>.init(value: extensionContent))
         }
         
         return .merge(

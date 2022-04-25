@@ -64,9 +64,12 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
     case .generateExtensionFile(from: let module, dependencies: let dependencies, let template):
         return FileGeneration.generateExtensionFile(state: state, module: module, dependencies: dependencies, environment: environment, template: template)
     case let .extensionFileGenerated(.success((module, content))):
-        return FileGeneration.extensionFileGenerated(state: &state, module: module, content: content, environment: environment)
+        if let module = module {
+            return FileGeneration.extensionFileGenerated(state: &state, module: module, content: content, environment: environment)
+        }
+        return .none
         
-        
+
         // File created
     case let .stateFileWritten(.success(filename)):
         fallthrough
@@ -77,17 +80,17 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
 
         // Loading Templates
     case .loadStateFileTemplate(fromPath: let fromPath):
-        return environment.loadTemplateFile(fromPath, state.verbose)
+        return environment.loadTemplateFile(fromPath, state.verbose, "State")
             .receive(on: environment.mainQueue)
             .catchToEffect()
             .map(FungenAction.stateFileTemplateLoaded)
     case .loadActionFileTemplate(fromPath: let fromPath):
-        return environment.loadTemplateFile(fromPath, state.verbose)
+        return environment.loadTemplateFile(fromPath, state.verbose, "Action")
             .receive(on: environment.mainQueue)
             .catchToEffect()
             .map(FungenAction.actionFileTemplateLoaded)
     case .loadExtensionFileTemplate(fromPath: let fromPath):
-        return environment.loadTemplateFile(fromPath, state.verbose)
+        return environment.loadTemplateFile(fromPath, state.verbose, "Extension")
             .receive(on: environment.mainQueue)
             .catchToEffect()
             .map(FungenAction.extensionFileTemplateLoaded)

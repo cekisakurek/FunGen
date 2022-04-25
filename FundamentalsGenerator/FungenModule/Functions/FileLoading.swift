@@ -43,12 +43,29 @@ struct FileLoading {
         return Effect(value: module)
     }
     
-    static func loadTemplateFile(filename: String, verbose: Bool) -> Effect<String, NSError> {
+    static func loadTemplateFile(filename: String?, verbose: Bool, name: String?) -> Effect<String, NSError> {
         
-        guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
-            return Effect(error: FungenError.cannotReadFile(name: filename))
+        // if filename exist use it. otherwise use default
+        if let filename = filename {
+            guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
+                return Effect(error: FungenError.cannotReadFile(name: filename))
+            }
+            return Effect(value: content)
         }
-        return Effect(value: content)
+        else {
+            if name == "Action" {
+                return Effect(value: actionTemplate)
+            }
+            else if name == "State" {
+                return Effect(value: stateTemplate)
+            }
+            else if name == "Extension" {
+                return Effect(value: stateExtensionTemplate)
+            }
+            else {
+                return Effect(error: FungenError.cannotFindTemplateFile(name: name!))
+            }
+        }
     }
     
     

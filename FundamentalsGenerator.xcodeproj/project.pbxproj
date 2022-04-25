@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		770DC617280ED89500FCCCB7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DC616280ED89500FCCCB7 /* main.swift */; };
 		770DC61F280ED8B000FCCCB7 /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 770DC61E280ED8B000FCCCB7 /* Stencil */; };
+		77261B53281713E50044BB88 /* ActionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BE2816B273004A4253 /* ActionTemplate.text */; };
 		776E01412811D7FF004A4253 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01402811D7FF004A4253 /* Yams */; };
 		776E01492811D8C3004A4253 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01482811D8C3004A4253 /* ArgumentParser */; };
 		776E014C2811DD38004A4253 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 776E014B2811DD38004A4253 /* AnyCodable */; };
@@ -64,7 +65,6 @@
 		776E02B82814945B004A4253 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B72814945B004A4253 /* StateDefinition.swift */; };
 		776E02BA2814946B004A4253 /* ActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B92814946B004A4253 /* ActionDefinition.swift */; };
 		776E02BC2814A1F7004A4253 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02BB2814A1F7004A4253 /* OSLog.swift */; };
-		776E02C12816B273004A4253 /* ActionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BE2816B273004A4253 /* ActionTemplate.text */; };
 		776E02C22816B273004A4253 /* ExtensionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BF2816B273004A4253 /* ExtensionTemplate.text */; };
 		776E02C32816B273004A4253 /* StateTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02C02816B273004A4253 /* StateTemplate.text */; };
 /* End PBXBuildFile section */
@@ -73,7 +73,7 @@
 		770DC611280ED89500FCCCB7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
+			dstPath = /usr/share/man/man1;
 			dstSubfolderSpec = 0;
 			files = (
 			);
@@ -488,7 +488,6 @@
 				776E024C28133B25004A4253 /* UserStateExtension.text in Resources */,
 				776E025328133B2C004A4253 /* LessonAction.text in Resources */,
 				776E026128133B47004A4253 /* authentication.yaml in Resources */,
-				776E02C12816B273004A4253 /* ActionTemplate.text in Resources */,
 				776E026428133B47004A4253 /* user.yaml in Resources */,
 				776E024928133B20004A4253 /* CourseAction.text in Resources */,
 				776E025228133B2C004A4253 /* LessonState.text in Resources */,
@@ -499,6 +498,7 @@
 				776E026028133B47004A4253 /* app.yaml in Resources */,
 				776E024A28133B20004A4253 /* CourseState.text in Resources */,
 				776E024E28133B25004A4253 /* UserState.text in Resources */,
+				77261B53281713E50044BB88 /* ActionTemplate.text in Resources */,
 				776E025E28133B47004A4253 /* openapi.yaml in Resources */,
 				776E024628132F19004A4253 /* AppState.text in Resources */,
 				776E024528132F19004A4253 /* AppAction.text in Resources */,

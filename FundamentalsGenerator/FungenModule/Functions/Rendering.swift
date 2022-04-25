@@ -52,21 +52,21 @@ struct Rendering {
         }
     }
     
-    static func generateStateExtensionContent(module: Module, dependencies: [Module], environment: FungenEnvironment, template: String) -> Effect<(Module, String), NSError> {
+    static func generateStateExtensionContent(module: Module, dependencies: [Module], environment: FungenEnvironment, template: String) -> Effect<(Module?, String), NSError> {
         
         var module = module
         module.applyDependencies(dependencies)
         
         guard module.submodules.count > 0 else {
-            let error = NSError(domain: "Fungen", code: -1)
-            return Effect(error: error)
+            
+            return Effect(value: (nil, ""))
         }
         
         var submodules = [Module]()
         for s in module.submodules {
             if !s.identifiable {
                 var object = s
-                object.statesArrayForStencil = object.allStates()
+                object.states = object.allStates()
                 submodules.append(object)
             }
         }

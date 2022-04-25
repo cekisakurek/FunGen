@@ -18,7 +18,7 @@ struct FungenEnvironment {
     let stencil = Stencil.Environment()
     
     var loadFile: (_ inputFile: String, _ verbose: Bool) -> Effect<Module, NSError>
-    var loadTemplateFile: (_ inputFile: String, _ verbose: Bool) -> Effect<String, NSError>
+    var loadTemplateFile: (_ inputFile: String?, _ verbose: Bool, _ name: String) -> Effect<String, NSError>
     
     
     
@@ -28,7 +28,7 @@ struct FungenEnvironment {
     
     var generateActionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment, _ template: String) -> Effect<(Module, String), NSError>
     
-    var generateStateExtensionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment, _ template: String) -> Effect<(Module, String), NSError>
+    var generateStateExtensionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment, _ template: String) -> Effect<(Module?, String), NSError>
     
     var writeFile: (_ content: String, _ folder: String, _ subfolder: String, _ filename: String) -> Effect<String, NSError>
     
@@ -38,7 +38,7 @@ struct FungenEnvironment {
         
     static let live = Self(mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
                            loadFile: FileLoading.loadFile(filename:verbose:),
-                           loadTemplateFile: FileLoading.loadTemplateFile(filename:verbose:),
+                           loadTemplateFile: FileLoading.loadTemplateFile(filename:verbose:name:),
                            resolveDependencies: DependencyResolution.resolveDependencies(module:baseURL:verbose:),
                            generateStateContent: Rendering.generateStateContent(module:dependencies:environment:template:),
                            generateActionContent: Rendering.generateActionContent(module:dependencies:environment:template:),

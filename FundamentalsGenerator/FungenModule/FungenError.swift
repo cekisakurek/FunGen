@@ -36,4 +36,9 @@ struct FungenError {
         return NSError(domain: "FungenError", code: -805,
                        userInfo: [NSLocalizedDescriptionKey: "Cannot render \(filename) for \(name) Reason: \(description)"])
     }
+    
+    static func cannotFindTemplateFile(name: String) -> NSError {
+        return NSError(domain: "FungenError", code: -804,
+                       userInfo: [NSLocalizedDescriptionKey: "Cannot find template \(name)"])
+    }
 }

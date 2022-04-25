@@ -34,9 +34,9 @@ extension Module {
     }
     // This looks ugly too!
     func allStates() -> [StateDefinition] {
-        guard self.states.count > 0 else { return [] }
+        guard self.statesSet.count > 0 else { return [] }
         var states = Set<StateDefinition>()
-        for state in self.states {
+        for state in self.statesSet {
             states.insert(state)
         }
         for submodule in allSubmodulesRecursively {

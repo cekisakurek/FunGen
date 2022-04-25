@@ -19,7 +19,7 @@ struct Generate: ParsableCommand {
     private var outputFolder: String
     
     @Option(name: .customLong("templates"), help: "Templates directory")
-    private var templateFolder: String
+    private var templateFolder: String?
 //    @Option(name: .customLong("verbose"), help: "Verbose. Default is false")
 //    private var verbose: Bool?
     

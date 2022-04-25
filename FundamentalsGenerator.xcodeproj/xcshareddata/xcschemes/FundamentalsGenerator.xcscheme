@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "770DC612280ED89500FCCCB7"
-               BuildableName = "FundamentalsGenerator"
+               BuildableName = "fungen"
                BlueprintName = "fungen"
                ReferencedContainer = "container:FundamentalsGenerator.xcodeproj">
             </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "770DC612280ED89500FCCCB7"
-            BuildableName = "FundamentalsGenerator"
+            BuildableName = "fungen"
             BlueprintName = "fungen"
             ReferencedContainer = "container:FundamentalsGenerator.xcodeproj">
          </BuildableReference>
@@ -67,18 +67,18 @@
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--templates"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "/Users/c.kisakurek/Documents/fungen/templates"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--input"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/c.kisakurek/Documents/fungen/courses.yaml"
+            argument = "/Users/c.kisakurek/Documents/fungen/app.yaml"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -110,7 +110,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "770DC612280ED89500FCCCB7"
-            BuildableName = "FundamentalsGenerator"
+            BuildableName = "fungen"
             BlueprintName = "fungen"
             ReferencedContainer = "container:FundamentalsGenerator.xcodeproj">
          </BuildableReference>

@@ -39,7 +39,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "770DC612280ED89500FCCCB7"
-            BuildableName = "FundamentalsGenerator"
+            BuildableName = "fungen"
             BlueprintName = "fungen"
             ReferencedContainer = "container:FundamentalsGenerator.xcodeproj">
          </BuildableReference>
