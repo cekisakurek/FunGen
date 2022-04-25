@@ -10,9 +10,9 @@ import ComposableArchitecture
 import Files
 import Yams
 
-extension FungenLogic {
+struct Rendering {
     
-    static func generateStateContent(module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<(Module, String), NSError> {
+    static func generateStateContent(module: Module, dependencies: [Module], environment: FungenEnvironment, template: String) -> Effect<(Module, String), NSError> {
         
         var module = module
         module.applyDependencies(dependencies)
@@ -23,13 +23,16 @@ extension FungenLogic {
         context["states"] = module.allStates()
         context["imports"] = module.imports
         
-        guard let rendered = try? environment.stencil.renderTemplate(string: stateTemplate, context: context) else {
-            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "State"))
+        do {
+            let rendered = try environment.stencil.renderTemplate(string: template, context: context)
+            return Effect(value: (module, rendered))
         }
-        return Effect(value: (module, rendered))
+        catch {
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "State", description: "\(error))"))
+        }
     }
     
-    static func generateActionContent(module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<(Module, String), NSError> {
+    static func generateActionContent(module: Module, dependencies: [Module], environment: FungenEnvironment, template: String) -> Effect<(Module, String), NSError> {
         
         var module = module
         module.applyDependencies(dependencies)
@@ -40,13 +43,16 @@ extension FungenLogic {
         context["submodules"] = Array(module.submodules)
         context["imports"] = module.imports
         
-        guard let rendered = try? environment.stencil.renderTemplate(string: actionTemplate, context: context) else {
-            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Action"))
+        do {
+            let rendered = try environment.stencil.renderTemplate(string: template, context: context)
+            return Effect(value: (module, rendered))
         }
-        return Effect(value: (module, rendered))
+        catch {
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Action", description: "\(error))"))
+        }
     }
     
-    static func generateStateExtensionContent(module: Module, dependencies: [Module], environment: FungenEnvironment) -> Effect<(Module, String), NSError> {
+    static func generateStateExtensionContent(module: Module, dependencies: [Module], environment: FungenEnvironment, template: String) -> Effect<(Module, String), NSError> {
         
         var module = module
         module.applyDependencies(dependencies)
@@ -70,9 +76,12 @@ extension FungenLogic {
         context["submodules"] = submodules
         context["imports"] = module.imports
         
-        guard let rendered = try? environment.stencil.renderTemplate(string: stateExtensionTemplate, context: context) else {
-            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Extension"))
+        do {
+            let rendered = try environment.stencil.renderTemplate(string: template, context: context)
+            return Effect(value: (module, rendered))
         }
-        return Effect(value: (module, rendered))
+        catch {
+            return Effect(error: FungenError.cannotRenderModule(name: module.name, filename: "Extension", description: "\(error))"))
+        }
     }
 }

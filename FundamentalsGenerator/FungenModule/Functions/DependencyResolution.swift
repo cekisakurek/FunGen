@@ -10,7 +10,7 @@ import ComposableArchitecture
 import Yams
 import os.log
 
-extension FungenLogic {
+struct DependencyResolution {
     
     static func resolveDependencies(state: FungenState, module: Module, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         

@@ -64,6 +64,9 @@
 		776E02B82814945B004A4253 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B72814945B004A4253 /* StateDefinition.swift */; };
 		776E02BA2814946B004A4253 /* ActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B92814946B004A4253 /* ActionDefinition.swift */; };
 		776E02BC2814A1F7004A4253 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02BB2814A1F7004A4253 /* OSLog.swift */; };
+		776E02C12816B273004A4253 /* ActionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BE2816B273004A4253 /* ActionTemplate.text */; };
+		776E02C22816B273004A4253 /* ExtensionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BF2816B273004A4253 /* ExtensionTemplate.text */; };
+		776E02C32816B273004A4253 /* StateTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02C02816B273004A4253 /* StateTemplate.text */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -129,6 +132,9 @@
 		776E02B72814945B004A4253 /* StateDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
 		776E02B92814946B004A4253 /* ActionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDefinition.swift; sourceTree = "<group>"; };
 		776E02BB2814A1F7004A4253 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
+		776E02BE2816B273004A4253 /* ActionTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ActionTemplate.text; sourceTree = "<group>"; };
+		776E02BF2816B273004A4253 /* ExtensionTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ExtensionTemplate.text; sourceTree = "<group>"; };
+		776E02C02816B273004A4253 /* StateTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StateTemplate.text; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +166,7 @@
 		770DC60A280ED89500FCCCB7 = {
 			isa = PBXGroup;
 			children = (
+				776E02BD2816B266004A4253 /* Templates */,
 				776E01DF2812EF7B004A4253 /* Examples */,
 				770DC615280ED89500FCCCB7 /* FundamentalsGenerator */,
 				776E023128132AFA004A4253 /* FunTest */,
@@ -357,6 +364,16 @@
 			path = Functions;
 			sourceTree = "<group>";
 		};
+		776E02BD2816B266004A4253 /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				776E02BE2816B273004A4253 /* ActionTemplate.text */,
+				776E02BF2816B273004A4253 /* ExtensionTemplate.text */,
+				776E02C02816B273004A4253 /* StateTemplate.text */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,13 +479,16 @@
 				776E025528133B30004A4253 /* AuthenticationAction.text in Resources */,
 				776E024428132F19004A4253 /* AppStateExtension.text in Resources */,
 				776E025128133B28004A4253 /* CoursesAction.text in Resources */,
+				776E02C22816B273004A4253 /* ExtensionTemplate.text in Resources */,
 				776E024D28133B25004A4253 /* UserAction.text in Resources */,
 				776E025D28133B47004A4253 /* registration.yaml in Resources */,
+				776E02C32816B273004A4253 /* StateTemplate.text in Resources */,
 				776E024828133B1C004A4253 /* RegistrationState.text in Resources */,
 				776E025428133B30004A4253 /* AuthenticationState.text in Resources */,
 				776E024C28133B25004A4253 /* UserStateExtension.text in Resources */,
 				776E025328133B2C004A4253 /* LessonAction.text in Resources */,
 				776E026128133B47004A4253 /* authentication.yaml in Resources */,
+				776E02C12816B273004A4253 /* ActionTemplate.text in Resources */,
 				776E026428133B47004A4253 /* user.yaml in Resources */,
 				776E024928133B20004A4253 /* CourseAction.text in Resources */,
 				776E025228133B2C004A4253 /* LessonState.text in Resources */,

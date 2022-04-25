@@ -32,8 +32,8 @@ struct FungenError {
                        userInfo: [NSLocalizedDescriptionKey: "Cannot decode content at path \(name)"])
     }
     
-    static func cannotRenderModule(name: String, filename: String) -> NSError {
+    static func cannotRenderModule(name: String, filename: String, description: String) -> NSError {
         return NSError(domain: "FungenError", code: -805,
-                       userInfo: [NSLocalizedDescriptionKey: "Cannot render \(filename) for \(name)"])
+                       userInfo: [NSLocalizedDescriptionKey: "Cannot render \(filename) for \(name) Reason: \(description)"])
     }
 }

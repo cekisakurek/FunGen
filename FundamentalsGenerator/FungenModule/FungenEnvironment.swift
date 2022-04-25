@@ -18,14 +18,17 @@ struct FungenEnvironment {
     let stencil = Stencil.Environment()
     
     var loadFile: (_ inputFile: String, _ verbose: Bool) -> Effect<Module, NSError>
+    var loadTemplateFile: (_ inputFile: String, _ verbose: Bool) -> Effect<String, NSError>
+    
+    
     
     var resolveDependencies: (_ module: Module, _ baseURL: URL?, _ verbose: Bool) -> Effect<[Module], NSError>
     
-    var generateStateContent: (_ module: Module,_ dependencies: [Module],_ environment: FungenEnvironment) -> Effect<(Module, String), NSError>
+    var generateStateContent: (_ module: Module,_ dependencies: [Module],_ environment: FungenEnvironment, _ template: String) -> Effect<(Module, String), NSError>
     
-    var generateActionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment) -> Effect<(Module, String), NSError>
+    var generateActionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment, _ template: String) -> Effect<(Module, String), NSError>
     
-    var generateStateExtensionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment) -> Effect<(Module, String), NSError>
+    var generateStateExtensionContent: (_ module: Module, _ dependencies: [Module], _ environment: FungenEnvironment, _ template: String) -> Effect<(Module, String), NSError>
     
     var writeFile: (_ content: String, _ folder: String, _ subfolder: String, _ filename: String) -> Effect<String, NSError>
     
@@ -34,17 +37,16 @@ struct FungenEnvironment {
     var printErrorAndAbort: (_ message: NSError) -> Never
         
     static let live = Self(mainQueue: DispatchQueue.main.eraseToAnyScheduler(),
-                           loadFile: FungenLogic.loadFile(filename:verbose:),
-                           resolveDependencies: FungenLogic.resolveDependencies(module:baseURL:verbose:),
-                           generateStateContent: FungenLogic.generateStateContent(module:dependencies:environment:),
-                           generateActionContent: FungenLogic.generateActionContent(module:dependencies:environment:),
-                           generateStateExtensionContent: FungenLogic.generateStateExtensionContent(module:dependencies:environment:),
-                           writeFile: FungenLogic.writeFile(content:folder:subfolder:filename:),
+                           loadFile: FileLoading.loadFile(filename:verbose:),
+                           loadTemplateFile: FileLoading.loadTemplateFile(filename:verbose:),
+                           resolveDependencies: DependencyResolution.resolveDependencies(module:baseURL:verbose:),
+                           generateStateContent: Rendering.generateStateContent(module:dependencies:environment:template:),
+                           generateActionContent: Rendering.generateActionContent(module:dependencies:environment:template:),
+                           generateStateExtensionContent: Rendering.generateStateExtensionContent(module:dependencies:environment:template:),
+                           writeFile: FileLoading.writeFile(content:folder:subfolder:filename:),
                            printMessage: printMessage(_:logType:verbose:),
                            printErrorAndAbort: printErrorAndAbort(error:)
     )
-    
-    
     
     static func printMessage(_ message: String, logType: OSLogType, verbose: Bool) {
         
@@ -53,9 +55,7 @@ struct FungenEnvironment {
         }
         else if verbose {
             os_log("%@", log: OSLog.default, type: logType, message)
-            
         }
-        
     }
 
     static func printErrorAndAbort(error: NSError) -> Never {

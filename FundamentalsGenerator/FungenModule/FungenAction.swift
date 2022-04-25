@@ -20,15 +20,24 @@ enum FungenAction {
     
     case generate
     
-    case generateStateFile(from: Module, dependencies: [Module])
+    case loadStateFileTemplate(fromPath: String)
+    case stateFileTemplateLoaded(Result<String, NSError>)
+    
+    case generateStateFile(from: Module, dependencies: [Module], template: String)
     case stateFileGenerated(Result<(Module, String), NSError>)
     case stateFileWritten(Result<String, NSError>)
     
-    case generateActionFile(from: Module, dependencies: [Module])
+    case loadActionFileTemplate(fromPath: String)
+    case actionFileTemplateLoaded(Result<String, NSError>)
+    
+    case generateActionFile(from: Module, dependencies: [Module], template: String)
     case actionFileGenerated(Result<(Module, String), NSError>)
     case actionFileWritten(Result<String, NSError>)
     
-    case generateExtensionFile(from: Module, dependencies: [Module])
+    case loadExtensionFileTemplate(fromPath: String)
+    case extensionFileTemplateLoaded(Result<String, NSError>)
+    
+    case generateExtensionFile(from: Module, dependencies: [Module], template: String)
     case extensionFileGenerated(Result<(Module, String), NSError>)
     case extensionFileWritten(Result<String, NSError>)
     

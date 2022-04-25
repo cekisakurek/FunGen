@@ -12,6 +12,7 @@ struct FungenState: Equatable {
     
     var inputFile: String
     var outputFolder: String
+    var templatesFolder: String?
     var baseURL: URL
     
     var rootModule: Module?

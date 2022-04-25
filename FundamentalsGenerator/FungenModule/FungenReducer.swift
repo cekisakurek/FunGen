@@ -24,47 +24,47 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
         
         // Loading the Root module
     case .loadRootModule:
-        return FungenLogic.loadRootModule(state: state, environment: environment)
+        return FileLoading.loadRootModule(state: state, environment: environment)
     case let .rootModuleLoaded(.success(module)):
-        return FungenLogic.rootModuleLoaded(state: &state, module: module, environment: environment)
+        return FileLoading.rootModuleLoaded(state: &state, module: module, environment: environment)
         
         
         // Loading the dependency modules
     case .loadModule:
-        return FungenLogic.loadModule(state: state, environment: environment)
+        return FileLoading.loadModule(state: state, environment: environment)
     case let .moduleLoaded(.success(module)):
-        return FungenLogic.moduleLoaded(state: &state, module: module, environment: environment)
+        return FileLoading.moduleLoaded(state: &state, module: module, environment: environment)
         
         
         // Resolving the Dependencies
     case let .resolveDependencies(module):
-        return FungenLogic.resolveDependencies(state: state, module: module, environment: environment)
+        return DependencyResolution.resolveDependencies(state: state, module: module, environment: environment)
     case let .dependenciesResolved(.success(dependencies)):
-        return FungenLogic.dependenciesResolved(state: state, dependencies: dependencies, environment: environment)
+        return DependencyResolution.dependenciesResolved(state: state, dependencies: dependencies, environment: environment)
         
         
         // Generate
     case .generate:
-        return FungenLogic.generate(state: state, environment: environment)
+        return FileGeneration.generate(state: state, environment: environment)
         
         
         // State File
-    case .generateStateFile(let module, let dependencies):
-        return FungenLogic.generateStateFile(state: state, module: module, dependencies: dependencies, environment: environment)
+    case .generateStateFile(let module, let dependencies, let template):
+        return FileGeneration.generateStateFile(state: state, module: module, dependencies: dependencies, environment: environment, template: template)
     case let .stateFileGenerated(.success((module, content))):
-        return FungenLogic.stateFileGenerated(state: &state, module: module, content: content, environment: environment)
+        return FileGeneration.stateFileGenerated(state: &state, module: module, content: content, environment: environment)
         
         // Action File
-    case .generateActionFile(from: let module, dependencies: let dependencies):
-        return FungenLogic.generateActionFile(state: state, module: module, dependencies: dependencies, environment: environment)
+    case .generateActionFile(from: let module, dependencies: let dependencies, let template):
+        return FileGeneration.generateActionFile(state: state, module: module, dependencies: dependencies, environment: environment, template: template)
     case let .actionFileGenerated(.success((module, content))):
-        return FungenLogic.actionFileGenerated(state: &state, module: module, content: content, environment: environment)
+        return FileGeneration.actionFileGenerated(state: &state, module: module, content: content, environment: environment)
         
         // Extension File
-    case .generateExtensionFile(from: let module, dependencies: let dependencies):
-        return FungenLogic.generateExtensionFile(state: state, module: module, dependencies: dependencies, environment: environment)
+    case .generateExtensionFile(from: let module, dependencies: let dependencies, let template):
+        return FileGeneration.generateExtensionFile(state: state, module: module, dependencies: dependencies, environment: environment, template: template)
     case let .extensionFileGenerated(.success((module, content))):
-        return FungenLogic.extensionFileGenerated(state: &state, module: module, content: content, environment: environment)
+        return FileGeneration.extensionFileGenerated(state: &state, module: module, content: content, environment: environment)
         
         
         // File created
@@ -73,8 +73,34 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
     case let .actionFileWritten(.success(filename)):
         fallthrough
     case let .extensionFileWritten(.success(filename)):
-        return FungenLogic.fileWritten(state: state, to: filename, environment: environment)
+        return FileGeneration.fileWritten(state: state, to: filename, environment: environment)
 
+        // Loading Templates
+    case .loadStateFileTemplate(fromPath: let fromPath):
+        return environment.loadTemplateFile(fromPath, state.verbose)
+            .receive(on: environment.mainQueue)
+            .catchToEffect()
+            .map(FungenAction.stateFileTemplateLoaded)
+    case .loadActionFileTemplate(fromPath: let fromPath):
+        return environment.loadTemplateFile(fromPath, state.verbose)
+            .receive(on: environment.mainQueue)
+            .catchToEffect()
+            .map(FungenAction.actionFileTemplateLoaded)
+    case .loadExtensionFileTemplate(fromPath: let fromPath):
+        return environment.loadTemplateFile(fromPath, state.verbose)
+            .receive(on: environment.mainQueue)
+            .catchToEffect()
+            .map(FungenAction.extensionFileTemplateLoaded)
+        
+    case let .stateFileTemplateLoaded(.success(content)):
+        return Effect<FungenAction, Never>.init(value: .generateStateFile(from:state.rootModule!, dependencies: state.dependencies, template: content))
+    
+    case let .actionFileTemplateLoaded(.success(content)):
+        return Effect<FungenAction, Never>.init(value: .generateActionFile(from:state.rootModule!, dependencies: state.dependencies, template: content))
+    
+    case let .extensionFileTemplateLoaded(.success(content)):
+        return Effect<FungenAction, Never>.init(value: .generateExtensionFile(from:state.rootModule!, dependencies: state.dependencies, template: content))
+        
         
         // Errors
     case let .actionFileGenerated(.failure(error)):
@@ -92,6 +118,12 @@ let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment> {
     case let .extensionFileWritten(.failure(error)):
         fallthrough
     case let .actionFileWritten(.failure(error)):
+        fallthrough
+    case let .stateFileTemplateLoaded(.failure(error)):
+        fallthrough
+    case let .actionFileTemplateLoaded(.failure(error)):
+        fallthrough
+    case let .extensionFileTemplateLoaded(.failure(error)):
         fallthrough
     case let .rootModuleLoaded(.failure(error)):
         environment.printErrorAndAbort(error)

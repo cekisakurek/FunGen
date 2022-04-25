@@ -11,7 +11,7 @@ import os.log
 import Yams
 import Files
 
-extension FungenLogic {
+struct FileLoading {
     
     static func writeFile(content: String, folder: String, subfolder: String, filename: String) -> Effect<String, NSError> {
         
@@ -31,7 +31,7 @@ extension FungenLogic {
     }
     
     static func loadFile(filename: String, verbose: Bool) -> Effect<Module, NSError> {
-        return Effect(error: FungenError.cannotReadFile(name: filename))
+        
         guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
             return Effect(error: FungenError.cannotReadFile(name: filename))
         }
@@ -42,6 +42,15 @@ extension FungenLogic {
         module.inputFilename = filename
         return Effect(value: module)
     }
+    
+    static func loadTemplateFile(filename: String, verbose: Bool) -> Effect<String, NSError> {
+        
+        guard let content = try? String(contentsOfFile: filename, encoding: .utf8) else {
+            return Effect(error: FungenError.cannotReadFile(name: filename))
+        }
+        return Effect(value: content)
+    }
+    
     
     static func loadRootModule(state: FungenState, environment: FungenEnvironment)
     -> Effect<FungenAction, Never> {

@@ -66,6 +66,14 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
+            argument = "--templates"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
+            argument = "/Users/c.kisakurek/Documents/fungen/templates"
+            isEnabled = "YES">
+         </CommandLineArgument>
+         <CommandLineArgument
             argument = "--input"
             isEnabled = "YES">
          </CommandLineArgument>

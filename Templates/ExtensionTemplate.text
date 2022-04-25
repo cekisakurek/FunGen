@@ -1,0 +1,19 @@
+{% for import in imports %}
+import {{ import }}
+{% endfor %}
+
+extension {{name}}State {
+{% for submodule in submodules %}
+    {{ submodule.test }}
+    public var {{ submodule.caseName }}State: {{submodule.name}}State {
+        get {
+            .init({% for state in submodule.statesArrayForStencil %}{{ state.name }}: {{ state.name }}{% if submodule.statesArrayForStencil.last.name != state.name  %}, {% endif %}{% endfor %})
+        }
+        set {
+        {% for state in submodule.statesArrayForStencil %}
+            {{ state.name }} = newValue.{{ state.name }}
+        {% endfor %}
+        }
+    }
+{% endfor %}
+}

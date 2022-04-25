@@ -18,17 +18,25 @@ final class FunGenerator {
         
         self.store = Store(initialState: state, reducer: fungenReducer, environment: .live )
         self.viewStore = ViewStore(store)
-        self.viewStore.send(.loadRootModule)
         
-        // We need to wait until everything is resolved
-        // TODO: Find a better way of doing this
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.viewStore.send(.generate)
+        let group = DispatchGroup()
+        group.enter()
+        self.viewStore.send(.loadRootModule)
+        DispatchQueue.main.async {
+            
+            group.leave()
+        }
+        
+        // does not wait. But the code in notify() gets run
+        // after enter() and leave() calls are balanced
+        
+        group.notify(queue: .main) {
+            self.viewStore.send(.generate)
         }
     }
     
-    func run(inputFile: String, outputFolder: String, baseURL: URL, verbose: Bool) {
-        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, baseURL: baseURL, verbose: verbose)
+    func run(inputFile: String, outputFolder: String, templatesFolder: String?, baseURL: URL, verbose: Bool) {
+        let state = FungenState(inputFile: inputFile, outputFolder: outputFolder, templatesFolder: templatesFolder, baseURL: baseURL, verbose: verbose)
         run(for: state)
     }
 }
