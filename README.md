@@ -6,7 +6,7 @@ Fungen is a swift command line tool for generating an Action and State definitio
 
 ```
 OPTIONS:
-  --input <input>         The file path for input file. Please check out the
+  --input <input>         The path for input file. Please check out the
                           examples for the definitions
   --output <output>       Output file directory. Required to be already
                           existing.
@@ -14,6 +14,10 @@ OPTIONS:
   --verbose
 
 ```
+
+The input file must be yaml file. 
+Please see the example folder for the input files.
+
 
 ## Default Template
 
@@ -77,7 +81,11 @@ extension {{name}}State {
 }
 ```
 
-You can use your own template if you pass a folder path with --templates argument.
+You can use your own template if you pass a folder path with --templates argument. 
+The template folder must to contain 
+ActionTemplate.text
+StateTemplate.text
+ExtensionTemplate.text
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
