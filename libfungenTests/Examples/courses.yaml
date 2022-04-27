@@ -1,0 +1,16 @@
+name: Courses
+type: scope
+states:
+  - name: courses
+    type: IdentifiedArrayOf<CourseState>
+  - name: authToken
+    type: String?
+actions:
+  - name: course
+    associatedData:
+      - name: id
+        type: CourseState.ID
+      - name: action
+        type: CourseAction
+dependencies:
+  - course.yaml

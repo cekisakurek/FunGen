@@ -1,0 +1,47 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+extension UserState {
+
+    public var authenticationState: AuthenticationState {
+        get {
+            .init(authToken: authToken, email: email, isLoginButtonDisabled: isLoginButtonDisabled, password: password)
+        }
+        set {
+        
+            authToken = newValue.authToken
+        
+            email = newValue.email
+        
+            isLoginButtonDisabled = newValue.isLoginButtonDisabled
+        
+            password = newValue.password
+        
+        }
+    }
+
+    public var registrationState: RegistrationState {
+        get {
+            .init(authToken: authToken, email: email, isRegisterButtonDisabled: isRegisterButtonDisabled, name: name, password: password, passwordConfirmation: passwordConfirmation)
+        }
+        set {
+        
+            authToken = newValue.authToken
+        
+            email = newValue.email
+        
+            isRegisterButtonDisabled = newValue.isRegisterButtonDisabled
+        
+            name = newValue.name
+        
+            password = newValue.password
+        
+            passwordConfirmation = newValue.passwordConfirmation
+        
+        }
+    }
+
+}

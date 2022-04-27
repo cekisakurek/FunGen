@@ -1,0 +1,28 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+public struct AuthenticationState: Equatable {
+
+    public var authToken: String?
+
+    public var email: String
+
+    public var isLoginButtonDisabled: Bool
+
+    public var password: String
+
+    public init(authToken: String?, email: String, isLoginButtonDisabled: Bool, password: String) {
+    
+        self.authToken = authToken
+    
+        self.email = email
+    
+        self.isLoginButtonDisabled = isLoginButtonDisabled
+    
+        self.password = password
+    
+    }
+}

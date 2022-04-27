@@ -1,0 +1,12 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+enum LessonAction: Equatable {
+
+    case watchVideo
+
+
+}

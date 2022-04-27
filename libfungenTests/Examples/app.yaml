@@ -1,0 +1,25 @@
+name: App
+type: module
+states:
+  - name: deviceToken
+    type: Data?
+  - name: keychainCredentials
+    type: Fundamentals.Credentials?
+actions:
+  - name: appDidFinishLaunching
+  - name: didRegisterForRemoteNotifications
+    associatedData:
+      - type: Result<Data, NSError>
+        name: result
+  - name: didLoadCredentials
+    associatedData:
+      - type: Result<Fundamentals.Credentials, NSError>
+        name: result
+  - name: loadCourses
+  - name: didLoadCourses
+    associatedData:
+      - type: Result<[CourseState], NSError>
+        name: result
+dependencies:
+  - courses.yaml
+  - user.yaml

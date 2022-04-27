@@ -1,0 +1,17 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+enum CoursesAction: Equatable {
+
+    case course(id: CourseState.ID, action: CourseAction)
+
+
+    // Submodule Actions
+
+    case courseAction(CourseAction)
+
+
+}

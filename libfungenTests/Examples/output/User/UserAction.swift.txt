@@ -1,0 +1,23 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+enum UserAction: Equatable {
+
+    case toggleShowRegistrationForm
+
+    case didLoadAppUser(result: Result<Fundamentals.AppUser, NSError>)
+
+    case loadAppUserProfile
+
+
+    // Submodule Actions
+
+    case authenticationAction(AuthenticationAction)
+
+    case registrationAction(RegistrationAction)
+
+
+}

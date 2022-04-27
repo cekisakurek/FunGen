@@ -1,0 +1,27 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+enum AppAction: Equatable {
+
+    case appDidFinishLaunching
+
+    case didLoadCourses(result: Result<[CourseState], NSError>)
+
+    case didLoadCredentials(result: Result<Fundamentals.Credentials, NSError>)
+
+    case didRegisterForRemoteNotifications(result: Result<Data, NSError>)
+
+    case loadCourses
+
+
+    // Submodule Actions
+
+    case coursesAction(CoursesAction)
+
+    case userAction(UserAction)
+
+
+}

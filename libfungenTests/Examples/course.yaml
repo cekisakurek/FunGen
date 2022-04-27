@@ -1,0 +1,32 @@
+name: Course
+type: scope
+type: item
+protocols:
+  - Identifiable
+states:
+  - name: id
+    type: UUID
+  - name: mediaURL
+    type: URL?
+  - name: title
+    type: String
+  - name: description
+    type: String
+  - name: authToken
+    type: String?
+  - name: lessons
+    type: IdentifiedArrayOf<LessonState>
+actions:
+  - name: loadLessons
+  - name: lesson
+    associatedData:
+      - name: id
+        type: LessonState.ID
+      - name: action
+        type: LessonAction
+  - name: didLoadLessons
+    associatedData:
+      - type: Result<[LessonState], NSError>
+        name: result
+dependencies:
+  - lesson.yaml

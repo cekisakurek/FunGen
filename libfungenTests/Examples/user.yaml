@@ -1,0 +1,20 @@
+name: User
+type: scope
+states:
+  - name: showRegistrationForm
+    type: Bool
+    mutable: var
+  - name: profilePictureURL
+    type: URL?
+    mutable: var
+actions:
+  - name: toggleShowRegistrationForm
+  - name: loadAppUserProfile
+  - name: didLoadAppUser
+    associatedData:
+      - type: Result<Fundamentals.AppUser, NSError>
+        name: result
+dependencies:
+  - authentication.yaml
+  - registration.yaml
+

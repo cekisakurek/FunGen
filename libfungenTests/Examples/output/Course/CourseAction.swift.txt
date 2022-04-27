@@ -1,0 +1,21 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+enum CourseAction: Equatable {
+
+    case didLoadLessons(result: Result<[LessonState], NSError>)
+
+    case lesson(id: LessonState.ID, action: LessonAction)
+
+    case loadLessons
+
+
+    // Submodule Actions
+
+    case lessonAction(LessonAction)
+
+
+}

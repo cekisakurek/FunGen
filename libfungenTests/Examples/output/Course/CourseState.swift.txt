@@ -1,0 +1,36 @@
+
+import Foundation
+
+import ComposableArchitecture
+
+
+public struct CourseState: Equatable, Identifiable {
+
+    public var authToken: String?
+
+    public var description: String
+
+    public var id: UUID
+
+    public var lessons: IdentifiedArrayOf<LessonState>
+
+    public var mediaURL: URL?
+
+    public var title: String
+
+    public init(authToken: String?, description: String, id: UUID, lessons: IdentifiedArrayOf<LessonState>, mediaURL: URL?, title: String) {
+    
+        self.authToken = authToken
+    
+        self.description = description
+    
+        self.id = id
+    
+        self.lessons = lessons
+    
+        self.mediaURL = mediaURL
+    
+        self.title = title
+    
+    }
+}

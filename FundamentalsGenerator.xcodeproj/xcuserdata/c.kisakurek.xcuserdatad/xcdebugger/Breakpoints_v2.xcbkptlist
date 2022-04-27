@@ -18,6 +18,86 @@
             endingLineNumber = "44"
             landmarkName = "loadTemplate(name:environment:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "26809B38-4450-4A57-8C8D-C6607EC9355A - 35db6d3380a5802"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stencil.FileSystemLoader.loadTemplate(name: Swift.String, environment: Stencil.Environment) throws -&gt; Stencil.Template"
+                  moduleName = "fungen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c.kisakurek/Library/Developer/Xcode/DerivedData/FundamentalsGenerator-ccemmrumfpsqwnbxhscnkrxczuez/SourcePackages/checkouts/Stencil/Sources/Loader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "26809B38-4450-4A57-8C8D-C6607EC9355A - e8e43a1582e43b08"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Stencil.FileSystemLoader.loadTemplate(name: Swift.String, environment: Stencil.Environment) throws -&gt; Stencil.Template"
+                  moduleName = "libfungen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c.kisakurek/Library/Developer/Xcode/DerivedData/FundamentalsGenerator-ccemmrumfpsqwnbxhscnkrxczuez/SourcePackages/checkouts/Stencil/Sources/Loader.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "216">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D69DF257-F186-4979-A49C-E3CB0A2634DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FundamentalsGenerator/FungenModule/FungenError.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "cannotCreateFile(name:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D69DF257-F186-4979-A49C-E3CB0A2634DC - e0ecd48250b37b60"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static fungen.FungenError.cannotCreateFile(name: Swift.String) -&gt; __C.NSError"
+                  moduleName = "fungen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c.kisakurek/Desktop/FundamentalsGenerator/FundamentalsGenerator/FungenModule/FungenError.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "92">
+               </Location>
+               <Location
+                  uuid = "D69DF257-F186-4979-A49C-E3CB0A2634DC - 8dbfeea4112cdf24"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static libfungen.FungenError.cannotCreateFile(name: Swift.String) -&gt; __C.NSError"
+                  moduleName = "libfungen"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/c.kisakurek/Desktop/FundamentalsGenerator/FundamentalsGenerator/FungenModule/FungenError.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

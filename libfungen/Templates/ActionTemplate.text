@@ -1,0 +1,15 @@
+{% for import in imports %}
+import {{ import }}
+{% endfor %}
+
+enum {{name}}Action: Equatable {
+{% for action in actions %}
+    case {{ action.name }}{% if action.associatedData.count > 0 %}({% for data in action.associatedData %}{{ data.name }}: {{ data.type }}{% if action.associatedData.last.name != data.name  %}, {% endif %}{% endfor %}){% endif %}
+{% endfor %}
+{% if submodules.count > 0 %}
+    // Submodule Actions
+{% for submodule in submodules %}
+    case {{ submodule.caseName }}Action({{ submodule.name }}Action)
+{% endfor %}
+{% endif %}
+}

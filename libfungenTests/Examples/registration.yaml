@@ -1,0 +1,39 @@
+name: Registration
+type: scope
+states:
+  - name: name
+    type: String
+  - name: email
+    type: String
+  - name: password
+    type: String
+  - name: passwordConfirmation
+    type: String
+  - name: authToken
+    type: String?
+  - name: isRegisterButtonDisabled
+    type: Bool
+actions:
+  - name: registerButtonTapped
+  - name: saveCredentials
+  - name: usernameTextFieldChanged
+    associatedData:
+      - type: String
+        name: text
+  - name: emailTextFieldChanged
+    associatedData:
+      - type: String
+        name: text
+  - name: passwordTextFieldChanged
+    associatedData:
+      - type: String
+        name: text
+  - name: passwordConfirmationTextFieldChanged
+    associatedData:
+      - type: String
+        name: text
+  - name: registrationResponse
+    associatedData:
+      - type: Result<String, NSError>
+        name: result
+

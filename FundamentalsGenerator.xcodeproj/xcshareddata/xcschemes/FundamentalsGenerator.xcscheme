@@ -78,7 +78,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/c.kisakurek/Documents/fungen/app.yaml"
+            argument = "/Users/c.kisakurek/Repo/generation/fungen/app.yaml"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -86,12 +86,12 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/c.kisakurek/Documents/fungen/generated1"
+            argument = "/Users/c.kisakurek/Repo/generation/output"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "--verbose"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </CommandLineArgument>
          <CommandLineArgument
             argument = "true"
