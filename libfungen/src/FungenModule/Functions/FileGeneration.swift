@@ -106,11 +106,11 @@ struct FileGeneration {
     static func fileWritten(state: FungenState, to path: String, environment: FungenEnvironment) -> Effect<FungenAction, Never> {
         
         environment.printMessage("File created at \(path)", OSLogType.default, state.verbose)
-//        if state.isFileCreationFinished() {
+        if state.isFileCreationFinished() {
             return Effect<FungenAction, Never>.init(value: FungenAction.exit)
                 .deferred(for: 1, scheduler: environment.mainQueue)
-//        }
-//        return .none
+        }
+        return .none
     }
     
 }

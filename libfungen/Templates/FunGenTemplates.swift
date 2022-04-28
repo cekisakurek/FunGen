@@ -7,7 +7,7 @@
 
 import Foundation
 
-
+// CARE: This is how we create the templates not with the text files. Those files are there just an example.
 // We cant use bundle resources with CLI app so we hard code these here
 
 let stateTemplate =

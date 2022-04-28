@@ -25,7 +25,10 @@ public struct FungenState: Equatable {
     public var verbose = false
     
     public func isFileCreationFinished() -> Bool {
-        return stateFileCreated && actionFileCreated && extensionFileCreated
+        if let rootModule = rootModule {
+            return (extensionFileCreated || (rootModule.countOfSubmodules(type: "scope") == 0)) && stateFileCreated && actionFileCreated
+        }
+        return false
     }
     
     public var generatedStateContent: String?

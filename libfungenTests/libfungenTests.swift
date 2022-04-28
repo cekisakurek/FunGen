@@ -24,83 +24,7 @@ class libfungenTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
     
-    private func lessonModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "lesson", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "lesson.yaml"
-        module.baseURL = baseURL
-        return module
-    }
-    private func courseModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "course", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "course.yaml"
-        module.baseURL = baseURL
-        return module
-    }
     
-    private func authenticationModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "authentication", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "authentication.yaml"
-        module.baseURL = baseURL
-        return module
-    }
-    
-    private func registrationModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "registration", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "registration.yaml"
-        module.baseURL = baseURL
-        return module
-    }
-    
-    private func userModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "user", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "user.yaml"
-        module.baseURL = baseURL
-        return module
-    }
-    
-    private func coursesModule(baseURL: URL) -> Module {
-        
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "courses", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = "courses.yaml"
-        module.baseURL = baseURL
-        return module
-    }
-    
-    private func appModule(filename: String) -> Module {
-        let bundle = Bundle(for: type(of: self))
-        let path = bundle.path(forResource: "app", ofType: "yaml")!
-        let str = try! String(contentsOfFile: path)
-        
-        var module = try! YAMLDecoder().decode(Module.self, from: str)
-        module.inputFilename = filename
-        return module
-    }
     
     
     
@@ -388,44 +312,83 @@ class libfungenTests: XCTestCase {
         return string
     }
     
-//    var stateTemplate: String {
-//        let bundle = Bundle(for: type(of: self))
-//        let string =  try! String(contentsOfFile: bundle.path(forResource: "StateTemplate", ofType: "text")!)
-////        string.removeLast()
-//        return string
-//    }
-//    
-//    var actionTemplate: String {
-//        let bundle = Bundle(for: type(of: self))
-//        let string =  try! String(contentsOfFile: bundle.path(forResource: "ActionTemplate", ofType: "text")!)
-////        string.removeLast()
-//        return string
-//    }
-//    
-//    var extensionTemplate: String {
-//        let bundle = Bundle(for: type(of: self))
-//        let string =  try! String(contentsOfFile: bundle.path(forResource: "ExtensionTemplate", ofType: "text")!)
-////        string.removeLast()
-//        return string
-//    }
+    private func lessonModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "lesson", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "lesson.yaml"
+        module.baseURL = baseURL
+        return module
+    }
+    private func courseModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "course", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "course.yaml"
+        module.baseURL = baseURL
+        return module
+    }
     
+    private func authenticationModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "authentication", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "authentication.yaml"
+        module.baseURL = baseURL
+        return module
+    }
     
+    private func registrationModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "registration", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "registration.yaml"
+        module.baseURL = baseURL
+        return module
+    }
     
-    //    func testExample() throws {
-    //        // This is an example of a functional test case.
-    //        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    //        // Any test you write for XCTest can be annotated as throws and async.
-    //        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-    //        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    //    }
-    //
-    //    func testPerformanceExample() throws {
-    //        // This is an example of a performance test case.
-    //        self.measure {
-    //            // Put the code you want to measure the time of here.
-    //        }
-    //    }
+    private func userModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "user", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "user.yaml"
+        module.baseURL = baseURL
+        return module
+    }
     
+    private func coursesModule(baseURL: URL) -> Module {
+        
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "courses", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = "courses.yaml"
+        module.baseURL = baseURL
+        return module
+    }
+    
+    private func appModule(filename: String) -> Module {
+        let bundle = Bundle(for: type(of: self))
+        let path = bundle.path(forResource: "app", ofType: "yaml")!
+        let str = try! String(contentsOfFile: path)
+        
+        var module = try! YAMLDecoder().decode(Module.self, from: str)
+        module.inputFilename = filename
+        return module
+    }
 }
 
 

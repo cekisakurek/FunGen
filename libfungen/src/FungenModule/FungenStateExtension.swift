@@ -48,4 +48,16 @@ extension Module {
         }
         return states.sorted(by: {$0.name < $1.name })
     }
+    
+    func countOfSubmodules(type: String) -> Int {
+        var count = 0
+        for s in self.submodules {
+            if s.type == type {
+                count += 1
+            }
+        }
+        return count
+    }
+    
+    
 }

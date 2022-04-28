@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		770DC617280ED89500FCCCB7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DC616280ED89500FCCCB7 /* main.swift */; };
-		770DC61F280ED8B000FCCCB7 /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 770DC61E280ED8B000FCCCB7 /* Stencil */; };
 		77261BF9281989610044BB88 /* libfungen.docc in Sources */ = {isa = PBXBuildFile; fileRef = 77261BF8281989610044BB88 /* libfungen.docc */; };
 		77261BFF281989610044BB88 /* libfungen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77261BF5281989610044BB88 /* libfungen.framework */; };
 		77261C04281989610044BB88 /* libfungenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77261C03281989610044BB88 /* libfungenTests.swift */; };
@@ -58,7 +57,6 @@
 		77261D282819FF130044BB88 /* LessonAction.swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77261CFB2819F18D0044BB88 /* LessonAction.swift.txt */; };
 		77261D292819FF160044BB88 /* AuthenticationState.swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77261CFD2819F18D0044BB88 /* AuthenticationState.swift.txt */; };
 		77261D2A2819FF160044BB88 /* AuthenticationAction.swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = 77261CFE2819F18D0044BB88 /* AuthenticationAction.swift.txt */; };
-		77261D2C2819FF7D0044BB88 /* OSLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02BB2814A1F7004A4253 /* OSLog.swift */; };
 		77261D2F281A023F0044BB88 /* StateTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02C02816B273004A4253 /* StateTemplate.text */; };
 		77261D30281A023F0044BB88 /* ActionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BE2816B273004A4253 /* ActionTemplate.text */; };
 		77261D31281A023F0044BB88 /* ExtensionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BF2816B273004A4253 /* ExtensionTemplate.text */; };
@@ -67,25 +65,33 @@
 		77261D34281A023F0044BB88 /* ExtensionTemplate.text in Resources */ = {isa = PBXBuildFile; fileRef = 776E02BF2816B273004A4253 /* ExtensionTemplate.text */; };
 		77261D35281A05FB0044BB88 /* FunGenTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DD2812EE92004A4253 /* FunGenTemplates.swift */; };
 		77261D36281A05FC0044BB88 /* FunGenTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DD2812EE92004A4253 /* FunGenTemplates.swift */; };
-		776E01412811D7FF004A4253 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01402811D7FF004A4253 /* Yams */; };
-		776E01492811D8C3004A4253 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01482811D8C3004A4253 /* ArgumentParser */; };
-		776E014C2811DD38004A4253 /* AnyCodable in Frameworks */ = {isa = PBXBuildFile; productRef = 776E014B2811DD38004A4253 /* AnyCodable */; };
-		776E01512811E4A2004A4253 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 776E01502811E4A2004A4253 /* Files */; };
-		776E01D62812EB02004A4253 /* Fungen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01D52812EB02004A4253 /* Fungen.swift */; };
-		776E026F281350DE004A4253 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 776E026E281350DE004A4253 /* ComposableArchitecture */; };
+		77261D44281A14020044BB88 /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 77261D43281A14020044BB88 /* ArgumentParser */; };
+		77261D45281A145D0044BB88 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DB2812EE5A004A4253 /* Extensions.swift */; };
+		77261D46281A14620044BB88 /* FungenAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E0269281350AA004A4253 /* FungenAction.swift */; };
+		77261D47281A14620044BB88 /* FungenEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E026B281350B1004A4253 /* FungenEnvironment.swift */; };
+		77261D48281A14620044BB88 /* FungenState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E0267281350A4004A4253 /* FungenState.swift */; };
+		77261D49281A14620044BB88 /* FungenReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02652813509D004A4253 /* FungenReducer.swift */; };
+		77261D4A281A14620044BB88 /* ModuleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AA28146D04004A4253 /* ModuleState.swift */; };
+		77261D4B281A14620044BB88 /* ActionDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B92814946B004A4253 /* ActionDefinition.swift */; };
+		77261D4C281A14620044BB88 /* FungenError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A628146B55004A4253 /* FungenError.swift */; };
+		77261D4D281A14620044BB88 /* FungenStateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02A828146CE8004A4253 /* FungenStateExtension.swift */; };
+		77261D4E281A14620044BB88 /* StateDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B72814945B004A4253 /* StateDefinition.swift */; };
+		77261D4F281A14660044BB88 /* DependencyResolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B1281489AD004A4253 /* DependencyResolution.swift */; };
+		77261D50281A14660044BB88 /* FileGeneration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AD281488E2004A4253 /* FileGeneration.swift */; };
+		77261D51281A14660044BB88 /* FungenLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B5281491D4004A4253 /* FungenLogic.swift */; };
+		77261D52281A14660044BB88 /* FileLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02B3281489D2004A4253 /* FileLoading.swift */; };
+		77261D53281A14660044BB88 /* Rendering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E02AF28148925004A4253 /* Rendering.swift */; };
+		77261D54281A146F0044BB88 /* FunGenTemplates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E01DD2812EE92004A4253 /* FunGenTemplates.swift */; };
+		77261D56281A14C80044BB88 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = 77261D55281A14C80044BB88 /* ComposableArchitecture */; };
+		77261D58281A14D30044BB88 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = 77261D57281A14D30044BB88 /* Yams */; };
+		77261D5A281A14DC0044BB88 /* Files in Frameworks */ = {isa = PBXBuildFile; productRef = 77261D59281A14DC0044BB88 /* Files */; };
+		77261D5C281A14E40044BB88 /* Stencil in Frameworks */ = {isa = PBXBuildFile; productRef = 77261D5B281A14E40044BB88 /* Stencil */; };
 		776E027328145C35004A4253 /* DefaultCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E027228145C35004A4253 /* DefaultCommand.swift */; };
 		776E027528145C92004A4253 /* GenerateCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776E027428145C92004A4253 /* GenerateCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		77261C00281989610044BB88 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 770DC60B280ED89500FCCCB7 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 77261BF4281989610044BB88;
-			remoteInfo = libfungen;
-		};
-		77261D2D2819FFD50044BB88 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 770DC60B280ED89500FCCCB7 /* Project object */;
 			proxyType = 1;
@@ -140,10 +146,8 @@
 		77261CFB2819F18D0044BB88 /* LessonAction.swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LessonAction.swift.txt; sourceTree = "<group>"; };
 		77261CFD2819F18D0044BB88 /* AuthenticationState.swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AuthenticationState.swift.txt; sourceTree = "<group>"; };
 		77261CFE2819F18D0044BB88 /* AuthenticationAction.swift.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AuthenticationAction.swift.txt; sourceTree = "<group>"; };
-		776E01D52812EB02004A4253 /* Fungen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fungen.swift; sourceTree = "<group>"; };
 		776E01DB2812EE5A004A4253 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		776E01DD2812EE92004A4253 /* FunGenTemplates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunGenTemplates.swift; sourceTree = "<group>"; };
-		776E023228132AFA004A4253 /* FunTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunTest.swift; sourceTree = "<group>"; };
 		776E02652813509D004A4253 /* FungenReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenReducer.swift; sourceTree = "<group>"; };
 		776E0267281350A4004A4253 /* FungenState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenState.swift; sourceTree = "<group>"; };
 		776E0269281350AA004A4253 /* FungenAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenAction.swift; sourceTree = "<group>"; };
@@ -160,7 +164,6 @@
 		776E02B5281491D4004A4253 /* FungenLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FungenLogic.swift; sourceTree = "<group>"; };
 		776E02B72814945B004A4253 /* StateDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateDefinition.swift; sourceTree = "<group>"; };
 		776E02B92814946B004A4253 /* ActionDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionDefinition.swift; sourceTree = "<group>"; };
-		776E02BB2814A1F7004A4253 /* OSLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OSLog.swift; sourceTree = "<group>"; };
 		776E02BE2816B273004A4253 /* ActionTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ActionTemplate.text; sourceTree = "<group>"; };
 		776E02BF2816B273004A4253 /* ExtensionTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ExtensionTemplate.text; sourceTree = "<group>"; };
 		776E02C02816B273004A4253 /* StateTemplate.text */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = StateTemplate.text; sourceTree = "<group>"; };
@@ -171,12 +174,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				776E014C2811DD38004A4253 /* AnyCodable in Frameworks */,
-				776E01492811D8C3004A4253 /* ArgumentParser in Frameworks */,
-				776E026F281350DE004A4253 /* ComposableArchitecture in Frameworks */,
-				776E01512811E4A2004A4253 /* Files in Frameworks */,
-				776E01412811D7FF004A4253 /* Yams in Frameworks */,
-				770DC61F280ED8B000FCCCB7 /* Stencil in Frameworks */,
+				77261D5A281A14DC0044BB88 /* Files in Frameworks */,
+				77261D5C281A14E40044BB88 /* Stencil in Frameworks */,
+				77261D56281A14C80044BB88 /* ComposableArchitecture in Frameworks */,
+				77261D58281A14D30044BB88 /* Yams in Frameworks */,
+				77261D44281A14020044BB88 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -206,7 +208,6 @@
 			isa = PBXGroup;
 			children = (
 				770DC615280ED89500FCCCB7 /* FundamentalsGenerator */,
-				776E023128132AFA004A4253 /* FunTest */,
 				77261BF6281989610044BB88 /* libfungen */,
 				77261C02281989610044BB88 /* libfungenTests */,
 				770DC614280ED89500FCCCB7 /* Products */,
@@ -227,9 +228,9 @@
 		770DC615280ED89500FCCCB7 /* FundamentalsGenerator */ = {
 			isa = PBXGroup;
 			children = (
-				776E027128145C2E004A4253 /* Commands */,
+				776E027228145C35004A4253 /* DefaultCommand.swift */,
+				776E027428145C92004A4253 /* GenerateCommand.swift */,
 				770DC616280ED89500FCCCB7 /* main.swift */,
-				776E01D52812EB02004A4253 /* Fungen.swift */,
 			);
 			path = FundamentalsGenerator;
 			sourceTree = "<group>";
@@ -377,14 +378,6 @@
 			path = Examples;
 			sourceTree = "<group>";
 		};
-		776E023128132AFA004A4253 /* FunTest */ = {
-			isa = PBXGroup;
-			children = (
-				776E023228132AFA004A4253 /* FunTest.swift */,
-			);
-			path = FunTest;
-			sourceTree = "<group>";
-		};
 		776E023F28132E41004A4253 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,20 +385,10 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		776E027128145C2E004A4253 /* Commands */ = {
-			isa = PBXGroup;
-			children = (
-				776E027228145C35004A4253 /* DefaultCommand.swift */,
-				776E027428145C92004A4253 /* GenerateCommand.swift */,
-			);
-			path = Commands;
-			sourceTree = "<group>";
-		};
 		776E027728145DF8004A4253 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				776E01DB2812EE5A004A4253 /* Extensions.swift */,
-				776E02BB2814A1F7004A4253 /* OSLog.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -458,16 +441,14 @@
 			buildRules = (
 			);
 			dependencies = (
-				77261D2E2819FFD50044BB88 /* PBXTargetDependency */,
 			);
 			name = fungen;
 			packageProductDependencies = (
-				770DC61E280ED8B000FCCCB7 /* Stencil */,
-				776E01402811D7FF004A4253 /* Yams */,
-				776E01482811D8C3004A4253 /* ArgumentParser */,
-				776E014B2811DD38004A4253 /* AnyCodable */,
-				776E01502811E4A2004A4253 /* Files */,
-				776E026E281350DE004A4253 /* ComposableArchitecture */,
+				77261D43281A14020044BB88 /* ArgumentParser */,
+				77261D55281A14C80044BB88 /* ComposableArchitecture */,
+				77261D57281A14D30044BB88 /* Yams */,
+				77261D59281A14DC0044BB88 /* Files */,
+				77261D5B281A14E40044BB88 /* Stencil */,
 			);
 			productName = FundamentalsGenerator;
 			productReference = 770DC613280ED89500FCCCB7 /* fungen */;
@@ -548,10 +529,9 @@
 			packageReferences = (
 				770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */,
 				776E013F2811D7FF004A4253 /* XCRemoteSwiftPackageReference "Yams" */,
-				776E01472811D8C3004A4253 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
-				776E014A2811DD38004A4253 /* XCRemoteSwiftPackageReference "AnyCodable" */,
 				776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */,
 				776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				77261D3C281A13B40044BB88 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
 			);
 			productRefGroup = 770DC614280ED89500FCCCB7 /* Products */;
 			projectDirPath = "";
@@ -618,10 +598,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77261D4E281A14620044BB88 /* StateDefinition.swift in Sources */,
+				77261D4B281A14620044BB88 /* ActionDefinition.swift in Sources */,
 				776E027328145C35004A4253 /* DefaultCommand.swift in Sources */,
-				776E01D62812EB02004A4253 /* Fungen.swift in Sources */,
 				776E027528145C92004A4253 /* GenerateCommand.swift in Sources */,
+				77261D4A281A14620044BB88 /* ModuleState.swift in Sources */,
+				77261D46281A14620044BB88 /* FungenAction.swift in Sources */,
+				77261D54281A146F0044BB88 /* FunGenTemplates.swift in Sources */,
+				77261D4F281A14660044BB88 /* DependencyResolution.swift in Sources */,
+				77261D49281A14620044BB88 /* FungenReducer.swift in Sources */,
+				77261D53281A14660044BB88 /* Rendering.swift in Sources */,
 				770DC617280ED89500FCCCB7 /* main.swift in Sources */,
+				77261D47281A14620044BB88 /* FungenEnvironment.swift in Sources */,
+				77261D50281A14660044BB88 /* FileGeneration.swift in Sources */,
+				77261D45281A145D0044BB88 /* Extensions.swift in Sources */,
+				77261D4C281A14620044BB88 /* FungenError.swift in Sources */,
+				77261D51281A14660044BB88 /* FungenLogic.swift in Sources */,
+				77261D4D281A14620044BB88 /* FungenStateExtension.swift in Sources */,
+				77261D52281A14660044BB88 /* FileLoading.swift in Sources */,
+				77261D48281A14620044BB88 /* FungenState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -636,7 +631,6 @@
 				77261C3A28198ABC0044BB88 /* FungenState.swift in Sources */,
 				77261C4328198AFF0044BB88 /* DependencyResolution.swift in Sources */,
 				77261C3B28198AC50044BB88 /* ModuleState.swift in Sources */,
-				77261D2C2819FF7D0044BB88 /* OSLog.swift in Sources */,
 				77261C4428198B020044BB88 /* FileLoading.swift in Sources */,
 				77261C4528198B0E0044BB88 /* FungenLogic.swift in Sources */,
 				77261C4728198B2B0044BB88 /* FungenError.swift in Sources */,
@@ -666,11 +660,6 @@
 			isa = PBXTargetDependency;
 			target = 77261BF4281989610044BB88 /* libfungen */;
 			targetProxy = 77261C00281989610044BB88 /* PBXContainerItemProxy */;
-		};
-		77261D2E2819FFD50044BB88 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 77261BF4281989610044BB88 /* libfungen */;
-			targetProxy = 77261D2D2819FFD50044BB88 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -944,15 +933,7 @@
 				minimumVersion = 0.9.0;
 			};
 		};
-		776E013F2811D7FF004A4253 /* XCRemoteSwiftPackageReference "Yams" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jpsim/Yams.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		776E01472811D8C3004A4253 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+		77261D3C281A13B40044BB88 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
 			requirement = {
@@ -960,12 +941,12 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		776E014A2811DD38004A4253 /* XCRemoteSwiftPackageReference "AnyCodable" */ = {
+		776E013F2811D7FF004A4253 /* XCRemoteSwiftPackageReference "Yams" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Flight-School/AnyCodable";
+			repositoryURL = "https://github.com/jpsim/Yams.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 0.6.4;
+				minimumVersion = 5.0.0;
 			};
 		};
 		776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */ = {
@@ -987,11 +968,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		770DC61E280ED8B000FCCCB7 /* Stencil */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */;
-			productName = Stencil;
-		};
 		77261C4928198B4D0044BB88 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
@@ -1012,30 +988,30 @@
 			package = 770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */;
 			productName = Stencil;
 		};
-		776E01402811D7FF004A4253 /* Yams */ = {
+		77261D43281A14020044BB88 /* ArgumentParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 77261D3C281A13B40044BB88 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
+			productName = ArgumentParser;
+		};
+		77261D55281A14C80044BB88 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		77261D57281A14D30044BB88 /* Yams */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 776E013F2811D7FF004A4253 /* XCRemoteSwiftPackageReference "Yams" */;
 			productName = Yams;
 		};
-		776E01482811D8C3004A4253 /* ArgumentParser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 776E01472811D8C3004A4253 /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
-			productName = ArgumentParser;
-		};
-		776E014B2811DD38004A4253 /* AnyCodable */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 776E014A2811DD38004A4253 /* XCRemoteSwiftPackageReference "AnyCodable" */;
-			productName = AnyCodable;
-		};
-		776E01502811E4A2004A4253 /* Files */ = {
+		77261D59281A14DC0044BB88 /* Files */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */;
 			productName = Files;
 		};
-		776E026E281350DE004A4253 /* ComposableArchitecture */ = {
+		77261D5B281A14E40044BB88 /* Stencil */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
-			productName = ComposableArchitecture;
+			package = 770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */;
+			productName = Stencil;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
