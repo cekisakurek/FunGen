@@ -10,6 +10,10 @@ import ComposableArchitecture
 import os.log
 import Yams
 import Files
+import SwiftFormat
+import SwiftFormatConfiguration
+import SwiftSyntaxParser
+
 
 //struct FileLoadingMock {
 //    static func loadFile(filename: String, verbose: Bool) -> Effect<Module, NSError> {
@@ -240,6 +244,35 @@ import Files
 ////            """
 //}
 
+struct FileHandlerOutputStream: TextOutputStream {
+    private let fileHandle: FileHandle
+    let encoding: String.Encoding
+
+    init(_ fileHandle: FileHandle, encoding: String.Encoding = .utf8) {
+        self.fileHandle = fileHandle
+        self.encoding = encoding
+    }
+
+    mutating func write(_ string: String) {
+        if let data = string.data(using: encoding) {
+            fileHandle.write(data)
+        }
+    }
+}
+
+struct MemoryOutputStream: TextOutputStream {
+    var content: String = ""
+    let encoding: String.Encoding
+
+    init(encoding: String.Encoding = .utf8) {
+        self.encoding = encoding
+    }
+
+    mutating func write(_ string: String) {
+        content.append(string)
+    }
+}
+
 
 
 struct FileLoading {
@@ -255,8 +288,23 @@ struct FileLoading {
         
         try? file.delete()
         
-        guard let _ = try? file.write(content) else  {
-            return Effect(error: FungenError.cannotWriteFile(name: filename))
+        var config = Configuration()
+        config.indentation = .spaces(4)
+        config.indentSwitchCaseLabels = true
+        let formatter = SwiftFormatter(configuration: config)
+        
+        do {
+            var output = MemoryOutputStream()
+            try formatter.format(source: content, assumingFileURL: nil, to: &output)
+            let _ = try SyntaxParser.parse(source: output.content)
+            
+            guard let _ = try? file.write(output.content) else  {
+                return Effect(error: FungenError.cannotWriteFile(name: filename))
+            }
+        }
+        catch {
+            return Effect(error: FungenError.error(with: error))
+            
         }
         return Effect(value: file.url.absoluteString)
     }

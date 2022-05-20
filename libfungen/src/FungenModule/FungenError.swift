@@ -41,4 +41,9 @@ struct FungenError {
         return NSError(domain: "FungenError", code: -804,
                        userInfo: [NSLocalizedDescriptionKey: "Cannot find template \(name)"])
     }
+    
+    static func error(with error: Error) -> NSError {
+        return NSError(domain: "FungenError", code: -819,
+                       userInfo: [NSLocalizedDescriptionKey: "Error \(error)"])
+    }
 }

@@ -23,7 +23,6 @@ public let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment>
         return .none
 //        DefaultCommand.exit()
         
-        
         // Loading the Root module
     case .loadRootModule:
         return FileLoading.loadRootModule(state: state, environment: environment)
@@ -84,6 +83,8 @@ public let fungenReducer = Reducer<FungenState, FungenAction, FungenEnvironment>
     case let .actionFileWritten(.success(filename)):
         fallthrough
     case let .extensionFileWritten(.success(filename)):
+        
+        
         return FileGeneration.fileWritten(state: state, to: filename, environment: environment)
 
         // Loading Templates

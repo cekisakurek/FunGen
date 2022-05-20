@@ -78,7 +78,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/c.kisakurek/Repo/generation/fungen/course.yaml"
+            argument = "/Users/cekisakurek/Documents/Foofle/Definitions/app.yaml"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
@@ -86,7 +86,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "/Users/c.kisakurek/Repo/generation/output"
+            argument = "/Users/cekisakurek/Documents/Test"
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument

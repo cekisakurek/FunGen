@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14155897283821DB0039181F /* SwiftSyntax in Frameworks */ = {isa = PBXBuildFile; productRef = 14155896283821DB0039181F /* SwiftSyntax */; };
+		14155899283821DB0039181F /* SwiftSyntaxBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = 14155898283821DB0039181F /* SwiftSyntaxBuilder */; };
+		1415589B283821DB0039181F /* SwiftSyntaxParser in Frameworks */ = {isa = PBXBuildFile; productRef = 1415589A283821DB0039181F /* SwiftSyntaxParser */; };
+		1415589E283821F20039181F /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 1415589D283821F20039181F /* SwiftFormat */; };
+		141558A0283821F20039181F /* SwiftFormatConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = 1415589F283821F20039181F /* SwiftFormatConfiguration */; };
+		141558A4283824290039181F /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = 141558A3283824290039181F /* SwiftFormat */; };
+		141558A8283824E80039181F /* SwiftFormatConfiguration in Frameworks */ = {isa = PBXBuildFile; productRef = 141558A7283824E80039181F /* SwiftFormatConfiguration */; };
 		770DC617280ED89500FCCCB7 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 770DC616280ED89500FCCCB7 /* main.swift */; };
 		77261BF9281989610044BB88 /* libfungen.docc in Sources */ = {isa = PBXBuildFile; fileRef = 77261BF8281989610044BB88 /* libfungen.docc */; };
 		77261BFF281989610044BB88 /* libfungen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 77261BF5281989610044BB88 /* libfungen.framework */; };
@@ -175,9 +182,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				77261D5A281A14DC0044BB88 /* Files in Frameworks */,
+				14155897283821DB0039181F /* SwiftSyntax in Frameworks */,
+				1415589B283821DB0039181F /* SwiftSyntaxParser in Frameworks */,
 				77261D5C281A14E40044BB88 /* Stencil in Frameworks */,
+				1415589E283821F20039181F /* SwiftFormat in Frameworks */,
 				77261D56281A14C80044BB88 /* ComposableArchitecture in Frameworks */,
+				14155899283821DB0039181F /* SwiftSyntaxBuilder in Frameworks */,
 				77261D58281A14D30044BB88 /* Yams in Frameworks */,
+				141558A0283821F20039181F /* SwiftFormatConfiguration in Frameworks */,
 				77261D44281A14020044BB88 /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -189,6 +201,8 @@
 				77261C4E28198B5B0044BB88 /* Files in Frameworks */,
 				77261C5028198B5E0044BB88 /* Stencil in Frameworks */,
 				77261C4C28198B550044BB88 /* Yams in Frameworks */,
+				141558A4283824290039181F /* SwiftFormat in Frameworks */,
+				141558A8283824E80039181F /* SwiftFormatConfiguration in Frameworks */,
 				77261C4A28198B4D0044BB88 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -449,6 +463,11 @@
 				77261D57281A14D30044BB88 /* Yams */,
 				77261D59281A14DC0044BB88 /* Files */,
 				77261D5B281A14E40044BB88 /* Stencil */,
+				14155896283821DB0039181F /* SwiftSyntax */,
+				14155898283821DB0039181F /* SwiftSyntaxBuilder */,
+				1415589A283821DB0039181F /* SwiftSyntaxParser */,
+				1415589D283821F20039181F /* SwiftFormat */,
+				1415589F283821F20039181F /* SwiftFormatConfiguration */,
 			);
 			productName = FundamentalsGenerator;
 			productReference = 770DC613280ED89500FCCCB7 /* fungen */;
@@ -473,6 +492,8 @@
 				77261C4B28198B550044BB88 /* Yams */,
 				77261C4D28198B5B0044BB88 /* Files */,
 				77261C4F28198B5E0044BB88 /* Stencil */,
+				141558A3283824290039181F /* SwiftFormat */,
+				141558A7283824E80039181F /* SwiftFormatConfiguration */,
 			);
 			productName = libfungen;
 			productReference = 77261BF5281989610044BB88 /* libfungen.framework */;
@@ -532,6 +553,8 @@
 				776E014F2811E4A2004A4253 /* XCRemoteSwiftPackageReference "Files" */,
 				776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				77261D3C281A13B40044BB88 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+				14155895283821DB0039181F /* XCRemoteSwiftPackageReference "swift-syntax" */,
+				1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			productRefGroup = 770DC614280ED89500FCCCB7 /* Products */;
 			projectDirPath = "";
@@ -925,6 +948,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		14155895283821DB0039181F /* XCRemoteSwiftPackageReference "swift-syntax" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-syntax.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50600.1;
+			};
+		};
+		1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-format.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.50600.1;
+			};
+		};
 		770DC61D280ED8B000FCCCB7 /* XCRemoteSwiftPackageReference "Stencil" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/stencilproject/Stencil.git";
@@ -968,6 +1007,41 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		14155896283821DB0039181F /* SwiftSyntax */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14155895283821DB0039181F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntax;
+		};
+		14155898283821DB0039181F /* SwiftSyntaxBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14155895283821DB0039181F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxBuilder;
+		};
+		1415589A283821DB0039181F /* SwiftSyntaxParser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 14155895283821DB0039181F /* XCRemoteSwiftPackageReference "swift-syntax" */;
+			productName = SwiftSyntaxParser;
+		};
+		1415589D283821F20039181F /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormat;
+		};
+		1415589F283821F20039181F /* SwiftFormatConfiguration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormatConfiguration;
+		};
+		141558A3283824290039181F /* SwiftFormat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormat;
+		};
+		141558A7283824E80039181F /* SwiftFormatConfiguration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1415589C283821F20039181F /* XCRemoteSwiftPackageReference "swift-format" */;
+			productName = SwiftFormatConfiguration;
+		};
 		77261C4928198B4D0044BB88 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 776E026D281350DE004A4253 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
